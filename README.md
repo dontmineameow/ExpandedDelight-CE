@@ -2,14 +2,20 @@
 
 # Expanded Delight
 
+Folia not been tested！！！
+if it show some bug to u
+just tell me to let me know
+
+[English](README.md) | 繁體中文
+
+### 農夫樂事 Paper / Bukkit 附屬插件移植版
+
 ### 農夫樂事 Paper / Bukkit 附屬插件移植版
 
 Minecraft 知名農夫樂事附屬模組 **[Expanded Delight](https://github.com/ianm1647/ExpandedDelight)** 的原生伺服器插件移植版本。  
 基於 **[CraftEngine](https://github.com/Momirealms/CraftEngine)** 驅動，完整重現模組內的作物、果汁機、起司製作、肉桂樹、各式料理與特色工具。
 
 ---
-
-</div>
 
 ## 功能特色
 
@@ -33,7 +39,7 @@ Minecraft 知名農夫樂事附屬模組 **[Expanded Delight](https://github.com
 
 ---
 
-## 運行環境與相容性說明
+## 安裝與前置需求
 
 > [!NOTE]
 > **當前測試環境與相容性**
