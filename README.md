@@ -1,5 +1,9 @@
 # Expanded Delight (Bukkit / Paper / Folia Addon)
 
+##Folia not been tested！！！
+##if it show some bug to u
+##just tell me to let me know
+
 [English](README.md) | 繁體中文
 
 Minecraft 知名農夫樂事附屬模組 **[Expanded Delight](https://github.com/ianm1647/ExpandedDelight)** 的 Bukkit / Paper / Folia 原生插件移植版本！
