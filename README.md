@@ -1,8 +1,8 @@
 # Expanded Delight (Bukkit / Paper / Folia Addon)
 
-##Folia not been tested！！！
-##if it show some bug to u
-##just tell me to let me know
+Folia not been tested！！！
+if it show some bug to u
+just tell me to let me know
 
 [English](README.md) | 繁體中文
 
