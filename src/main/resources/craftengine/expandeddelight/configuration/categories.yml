@@ -1,0 +1,142 @@
+categories:
+  expandeddelight:categories:
+    name: <!i><white><lang:expandeddelight.category.root></white>
+    icon: expandeddelight:juicer
+    list:
+      - '#expandeddelight:block'
+      - '#expandeddelight:item'
+      - '#expandeddelight:food'
+      - '#expandeddelight:tool'
+      - '#expandeddelight:gui'
+
+  expandeddelight:block:
+    name: <!i><lang:expandeddelight.category.block>
+    hidden: true
+    icon: expandeddelight:juicer
+    list:
+      - expandeddelight:juicer
+      - expandeddelight:cask
+      - expandeddelight:milk_cask
+      - expandeddelight:goat_milk_cask
+      - expandeddelight:cheese_cask
+      - expandeddelight:goat_cheese_cask
+      - expandeddelight:cinnamon_log
+      - expandeddelight:stripped_cinnamon_log
+      - expandeddelight:cinnamon_wood
+      - expandeddelight:stripped_cinnamon_wood
+      - expandeddelight:cinnamon_planks
+      - expandeddelight:cinnamon_cabinet
+      - expandeddelight:asparagus_crate
+      - expandeddelight:sweet_potato_crate
+      - expandeddelight:chili_pepper_crate
+      - expandeddelight:cranberry_bag
+      - expandeddelight:salt_ore
+      - expandeddelight:deepslate_salt_ore
+      - expandeddelight:cheese_wheel
+      - expandeddelight:goat_cheese_wheel
+      - expandeddelight:cranberry_cobbler
+      - expandeddelight:honeyed_goat_cheese_tart
+
+  expandeddelight:item:
+    name: <!i><lang:expandeddelight.category.item>
+    hidden: true
+    icon: expandeddelight:cinnamon_stick
+    list:
+      - expandeddelight:asparagus_seeds
+      - expandeddelight:chili_pepper_seeds
+      - expandeddelight:glass_jar
+      - expandeddelight:cinnamon_stick
+      - expandeddelight:cinnamon
+      - expandeddelight:salt_rock
+      - expandeddelight:salt
+      - expandeddelight:goat_milk_bucket
+      - expandeddelight:goat_milk_bottle
+
+  expandeddelight:tool:
+    name: <!i><lang:expandeddelight.category.tool>
+    hidden: true
+    icon: expandeddelight:crushing_mallet
+    list:
+      - expandeddelight:crushing_mallet
+
+  expandeddelight:food:
+    name: <!i><lang:expandeddelight.category.food>
+    hidden: true
+    icon: expandeddelight:apple_juice
+    list:
+      - expandeddelight:asparagus
+      - expandeddelight:sweet_potato
+      - expandeddelight:baked_sweet_potato
+      - expandeddelight:chili_pepper
+      - expandeddelight:peanut
+      - expandeddelight:cranberries
+      - expandeddelight:lemon
+      - expandeddelight:cheese_slice
+      - expandeddelight:goat_cheese_slice
+      - expandeddelight:cheese_sandwich
+      - expandeddelight:grilled_cheese
+      - expandeddelight:cranberry_goat_cheese_toast
+      - expandeddelight:peanut_butter
+      - expandeddelight:peanut_butter_sandwich
+      - expandeddelight:peanut_butter_honey_sandwich
+      - expandeddelight:sweet_berry_jelly_sandwich
+      - expandeddelight:glow_berry_jelly_sandwich
+      - expandeddelight:cranberry_jelly_sandwich
+      - expandeddelight:sweet_roll
+      - expandeddelight:berry_sweet_roll
+      - expandeddelight:glow_berry_sweet_roll
+      - expandeddelight:cranberry_cobbler_slice
+      - expandeddelight:honeyed_goat_cheese_tart_slice
+      - expandeddelight:chocolate_cookie
+      - expandeddelight:sugar_cookie
+      - expandeddelight:snickerdoodle
+      - expandeddelight:cinnamon_rice
+      - expandeddelight:cinnamon_apples
+      - expandeddelight:apple_juice
+      - expandeddelight:sweet_berry_juice
+      - expandeddelight:glow_berry_juice
+      - expandeddelight:cranberry_juice
+      - expandeddelight:sweet_berry_jelly
+      - expandeddelight:glow_berry_jelly
+      - expandeddelight:cranberry_jelly
+      - expandeddelight:peanut_salad
+      - expandeddelight:sweet_potato_salad
+      - expandeddelight:goat_cheese_beetroot_salad
+      - expandeddelight:asparagus_soup
+      - expandeddelight:asparagus_soup_creamy
+      - expandeddelight:peanut_honey_soup
+      - expandeddelight:mac_and_cheese
+      - expandeddelight:asparagus_and_bacon_cheesy
+      - expandeddelight:asparagus_mushroom_pasta
+      - expandeddelight:asparagus_frittata
+      - expandeddelight:peperonata
+      - expandeddelight:chili_pepper_salmon
+      - expandeddelight:cranberry_chicken
+      - expandeddelight:sweet_potato_casserole
+
+  expandeddelight:gui:
+    name: <!i><lang:expandeddelight.category.gui>
+    hidden: true
+    icon: expandeddelight:juicer_progress_20
+    list:
+      - expandeddelight:juicer_progress_0
+      - expandeddelight:juicer_progress_1
+      - expandeddelight:juicer_progress_2
+      - expandeddelight:juicer_progress_3
+      - expandeddelight:juicer_progress_4
+      - expandeddelight:juicer_progress_5
+      - expandeddelight:juicer_progress_6
+      - expandeddelight:juicer_progress_7
+      - expandeddelight:juicer_progress_8
+      - expandeddelight:juicer_progress_9
+      - expandeddelight:juicer_progress_10
+      - expandeddelight:juicer_progress_11
+      - expandeddelight:juicer_progress_12
+      - expandeddelight:juicer_progress_13
+      - expandeddelight:juicer_progress_14
+      - expandeddelight:juicer_progress_15
+      - expandeddelight:juicer_progress_16
+      - expandeddelight:juicer_progress_17
+      - expandeddelight:juicer_progress_18
+      - expandeddelight:juicer_progress_19
+      - expandeddelight:juicer_progress_20

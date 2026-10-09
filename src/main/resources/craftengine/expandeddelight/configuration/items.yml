@@ -1,0 +1,684 @@
+templates:
+  expandeddelight:item_template:
+    model: ${__NAMESPACE__}:item/${__ID__}
+  expandeddelight:drink_template:
+    material: honey_bottle
+    model: ${__NAMESPACE__}:item/${__ID__}
+    data:
+      components:
+        minecraft:max_stack_size: 16
+        minecraft:use_remainder:
+          id: minecraft:glass_bottle
+          count: 1
+      food:
+        nutrition: 1
+        saturation: 1.2
+        can-always-eat: true
+  expandeddelight:jelly_template:
+    material: honey_bottle
+    model: ${__NAMESPACE__}:item/${__ID__}
+    data:
+      components:
+        minecraft:max_stack_size: 16
+        minecraft:use_remainder:
+          id: minecraft:glass_bottle
+          count: 1
+      food:
+        nutrition: 3
+        saturation: 0.6
+        can-always-eat: true
+  expandeddelight:bowl_food_template:
+    material: cooked_beef
+    model: ${__NAMESPACE__}:item/${__ID__}
+    data:
+      components:
+        minecraft:max_stack_size: 16
+        minecraft:use_remainder:
+          id: minecraft:bowl
+          count: 1
+
+items:
+  expandeddelight:asparagus:
+    material: carrot
+    template: expandeddelight:item_template
+    data:
+      item-name: <!i><lang:item.expandeddelight.asparagus>
+      food:
+        nutrition: 2
+        saturation: 0.2
+  expandeddelight:asparagus_seeds:
+    material: wheat_seeds
+    template: expandeddelight:item_template
+    data:
+      item-name: <!i><lang:item.expandeddelight.asparagus_seeds>
+    behavior:
+      type: block_item
+      block: expandeddelight:asparagus_crop
+
+  expandeddelight:sweet_potato:
+    material: potato
+    template: expandeddelight:item_template
+    data:
+      item-name: <!i><lang:item.expandeddelight.sweet_potato>
+      food:
+        nutrition: 2
+        saturation: 0.2
+    behavior:
+      type: block_item
+      block: expandeddelight:sweet_potato_crop
+
+  expandeddelight:baked_sweet_potato:
+    material: baked_potato
+    template: expandeddelight:item_template
+    data:
+      item-name: <!i><lang:item.expandeddelight.baked_sweet_potato>
+      food:
+        nutrition: 6
+        saturation: 0.4
+
+  expandeddelight:chili_pepper:
+    material: apple
+    template: expandeddelight:item_template
+    data:
+      item-name: <!i><lang:item.expandeddelight.chili_pepper>
+      food:
+        nutrition: 2
+        saturation: 0.1
+  expandeddelight:chili_pepper_seeds:
+    material: wheat_seeds
+    template: expandeddelight:item_template
+    data:
+      item-name: <!i><lang:item.expandeddelight.chili_pepper_seeds>
+    behavior:
+      type: block_item
+      block: expandeddelight:chili_pepper_crop
+
+  expandeddelight:peanut:
+    material: wheat_seeds
+    template: expandeddelight:item_template
+    data:
+      item-name: <!i><lang:item.expandeddelight.peanut>
+      food:
+        nutrition: 1
+        saturation: 0.0
+    behavior:
+      type: block_item
+      block: expandeddelight:peanut_crop
+
+  expandeddelight:cranberries:
+    material: sweet_berries
+    template: expandeddelight:item_template
+    data:
+      item-name: <!i><lang:item.expandeddelight.cranberries>
+      food:
+        nutrition: 2
+        saturation: 0.5
+    behavior:
+      type: block_item
+      block: expandeddelight:cranberry_plant
+
+  expandeddelight:lemon:
+    material: apple
+    template: expandeddelight:item_template
+    data:
+      item-name: <!i><lang:item.expandeddelight.lemon>
+      food:
+        nutrition: 2
+        saturation: 0.1
+
+  expandeddelight:crushing_mallet:
+    material: wooden_axe
+    template: expandeddelight:item_template
+    data:
+      item-name: <!i><lang:item.expandeddelight.crushing_mallet>
+      components:
+        minecraft:max_stack_size: 1
+        minecraft:max_damage: 64
+
+  expandeddelight:glass_jar:
+    material: glass_bottle
+    template: expandeddelight:item_template
+    data:
+      item-name: <!i><lang:item.expandeddelight.glass_jar>
+
+  expandeddelight:cinnamon_stick:
+    material: stick
+    template: expandeddelight:item_template
+    data:
+      item-name: <!i><lang:item.expandeddelight.cinnamon_stick>
+
+  expandeddelight:cinnamon:
+    material: sugar
+    template: expandeddelight:item_template
+    data:
+      item-name: <!i><lang:item.expandeddelight.cinnamon>
+
+  expandeddelight:salt_rock:
+    material: raw_iron
+    template: expandeddelight:item_template
+    data:
+      item-name: <!i><lang:item.expandeddelight.salt_rock>
+
+  expandeddelight:salt:
+    material: sugar
+    template: expandeddelight:item_template
+    data:
+      item-name: <!i><lang:item.expandeddelight.salt>
+
+  expandeddelight:goat_milk_bucket:
+    material: milk_bucket
+    template: expandeddelight:item_template
+    data:
+      item-name: <!i><lang:item.expandeddelight.goat_milk_bucket>
+      components:
+        minecraft:max_stack_size: 1
+        minecraft:use_remainder:
+          id: minecraft:bucket
+          count: 1
+    settings:
+      tags:
+        - farmersdelight:milk
+        - c:drinks/milk
+
+  expandeddelight:goat_milk_bottle:
+    material: potion
+    template: expandeddelight:item_template
+    data:
+      item-name: <!i><lang:item.expandeddelight.goat_milk_bottle>
+      lore: '<!i><blue><lang:farmersdelight.tooltip.milk_bottle.effect></blue>'
+      components:
+        minecraft:max_stack_size: 16
+        minecraft:use_remainder:
+          id: minecraft:glass_bottle
+          count: 1
+    settings:
+      tags:
+        - farmersdelight:milk
+        - c:drinks/milk
+
+  expandeddelight:cheese_slice:
+    material: bread
+    template: expandeddelight:item_template
+    data:
+      item-name: <!i><lang:item.expandeddelight.cheese_slice>
+      food:
+        nutrition: 2
+        saturation: 0.2
+
+  expandeddelight:goat_cheese_slice:
+    material: bread
+    template: expandeddelight:item_template
+    data:
+      item-name: <!i><lang:item.expandeddelight.goat_cheese_slice>
+      food:
+        nutrition: 2
+        saturation: 0.2
+
+  expandeddelight:cheese_sandwich:
+    material: bread
+    template: expandeddelight:item_template
+    data:
+      item-name: <!i><lang:item.expandeddelight.cheese_sandwich>
+      food:
+        nutrition: 5
+        saturation: 0.3
+
+  expandeddelight:grilled_cheese:
+    material: bread
+    template: expandeddelight:item_template
+    data:
+      item-name: <!i><lang:item.expandeddelight.grilled_cheese>
+      food:
+        nutrition: 8
+        saturation: 0.5
+
+  expandeddelight:cranberry_goat_cheese_toast:
+    material: bread
+    template: expandeddelight:item_template
+    data:
+      item-name: <!i><lang:item.expandeddelight.cranberry_goat_cheese_toast>
+      food:
+        nutrition: 4
+        saturation: 0.6
+
+  expandeddelight:peanut_butter:
+    material: bowl
+    template: expandeddelight:bowl_food_template
+    data:
+      item-name: <!i><lang:item.expandeddelight.peanut_butter>
+      food:
+        nutrition: 2
+        saturation: 0.3
+
+  expandeddelight:peanut_butter_sandwich:
+    material: bread
+    template: expandeddelight:item_template
+    data:
+      item-name: <!i><lang:item.expandeddelight.peanut_butter_sandwich>
+      food:
+        nutrition: 6
+        saturation: 0.4
+
+  expandeddelight:peanut_butter_honey_sandwich:
+    material: bread
+    template: expandeddelight:item_template
+    data:
+      item-name: <!i><lang:item.expandeddelight.peanut_butter_honey_sandwich>
+      food:
+        nutrition: 7
+        saturation: 0.5
+
+  expandeddelight:sweet_berry_jelly_sandwich:
+    material: bread
+    template: expandeddelight:item_template
+    data:
+      item-name: <!i><lang:item.expandeddelight.sweet_berry_jelly_sandwich>
+      food:
+        nutrition: 7
+        saturation: 0.5
+
+  expandeddelight:glow_berry_jelly_sandwich:
+    material: bread
+    template: expandeddelight:item_template
+    data:
+      item-name: <!i><lang:item.expandeddelight.glow_berry_jelly_sandwich>
+      food:
+        nutrition: 7
+        saturation: 0.5
+
+  expandeddelight:cranberry_jelly_sandwich:
+    material: bread
+    template: expandeddelight:item_template
+    data:
+      item-name: <!i><lang:item.expandeddelight.cranberry_jelly_sandwich>
+      food:
+        nutrition: 7
+        saturation: 0.6
+
+  expandeddelight:sweet_roll:
+    material: bread
+    template: expandeddelight:item_template
+    data:
+      item-name: <!i><lang:item.expandeddelight.sweet_roll>
+      food:
+        nutrition: 5
+        saturation: 0.3
+
+  expandeddelight:berry_sweet_roll:
+    material: bread
+    template: expandeddelight:item_template
+    data:
+      item-name: <!i><lang:item.expandeddelight.berry_sweet_roll>
+      food:
+        nutrition: 6
+        saturation: 0.5
+
+  expandeddelight:glow_berry_sweet_roll:
+    material: bread
+    template: expandeddelight:item_template
+    data:
+      item-name: <!i><lang:item.expandeddelight.glow_berry_sweet_roll>
+      food:
+        nutrition: 6
+        saturation: 0.5
+
+  expandeddelight:cranberry_cobbler_slice:
+    material: pumpkin_pie
+    template: expandeddelight:item_template
+    data:
+      item-name: <!i><lang:item.expandeddelight.cranberry_cobbler_slice>
+      food:
+        nutrition: 3
+        saturation: 0.3
+    events:
+      - on: consume
+        functions:
+          - type: potion_effect
+            potion-effect: minecraft:speed
+            duration: 600
+            amplifier: 0
+
+  expandeddelight:honeyed_goat_cheese_tart_slice:
+    material: pumpkin_pie
+    template: expandeddelight:item_template
+    data:
+      item-name: <!i><lang:item.expandeddelight.honeyed_goat_cheese_tart_slice>
+      food:
+        nutrition: 4
+        saturation: 0.5
+    events:
+      - on: consume
+        functions:
+          - type: potion_effect
+            potion-effect: minecraft:speed
+            duration: 600
+            amplifier: 0
+
+  expandeddelight:chocolate_cookie:
+    material: cookie
+    template: expandeddelight:item_template
+    data:
+      item-name: <!i><lang:item.expandeddelight.chocolate_cookie>
+      food:
+        nutrition: 2
+        saturation: 0.3
+
+  expandeddelight:sugar_cookie:
+    material: cookie
+    template: expandeddelight:item_template
+    data:
+      item-name: <!i><lang:item.expandeddelight.sugar_cookie>
+      food:
+        nutrition: 2
+        saturation: 0.3
+
+  expandeddelight:snickerdoodle:
+    material: cookie
+    template: expandeddelight:item_template
+    data:
+      item-name: <!i><lang:item.expandeddelight.snickerdoodle>
+      food:
+        nutrition: 2
+        saturation: 0.4
+
+  expandeddelight:cinnamon_rice:
+    material: bowl
+    template: expandeddelight:bowl_food_template
+    data:
+      item-name: <!i><lang:item.expandeddelight.cinnamon_rice>
+      food:
+        nutrition: 7
+        saturation: 0.5
+
+  expandeddelight:cinnamon_apples:
+    material: bowl
+    template: expandeddelight:bowl_food_template
+    data:
+      item-name: <!i><lang:item.expandeddelight.cinnamon_apples>
+      food:
+        nutrition: 7
+        saturation: 0.5
+
+  expandeddelight:apple_juice:
+    template: expandeddelight:drink_template
+    data:
+      item-name: <!i><lang:item.expandeddelight.apple_juice>
+    events:
+      - on: consume
+        functions:
+          - type: potion_effect
+            potion-effect: minecraft:speed
+            duration: 200
+            amplifier: 0
+    settings:
+      tags:
+        - farmersdelight:drinks
+
+  expandeddelight:sweet_berry_juice:
+    template: expandeddelight:drink_template
+    data:
+      item-name: <!i><lang:item.expandeddelight.sweet_berry_juice>
+    events:
+      - on: consume
+        functions:
+          - type: potion_effect
+            potion-effect: minecraft:health_boost
+            duration: 200
+            amplifier: 0
+    settings:
+      tags:
+        - farmersdelight:drinks
+
+  expandeddelight:glow_berry_juice:
+    template: expandeddelight:drink_template
+    data:
+      item-name: <!i><lang:item.expandeddelight.glow_berry_juice>
+    events:
+      - on: consume
+        functions:
+          - type: potion_effect
+            potion-effect: minecraft:night_vision
+            duration: 200
+            amplifier: 0
+    settings:
+      tags:
+        - farmersdelight:drinks
+
+  expandeddelight:cranberry_juice:
+    template: expandeddelight:drink_template
+    data:
+      item-name: <!i><lang:item.expandeddelight.cranberry_juice>
+    events:
+      - on: consume
+        functions:
+          - type: potion_effect
+            potion-effect: minecraft:absorption
+            duration: 200
+            amplifier: 0
+    settings:
+      tags:
+        - farmersdelight:drinks
+
+  expandeddelight:sweet_berry_jelly:
+    template: expandeddelight:jelly_template
+    data:
+      item-name: <!i><lang:item.expandeddelight.sweet_berry_jelly>
+    events:
+      - on: consume
+        functions:
+          - type: potion_effect
+            potion-effect: minecraft:health_boost
+            duration: 400
+            amplifier: 0
+
+  expandeddelight:glow_berry_jelly:
+    template: expandeddelight:jelly_template
+    data:
+      item-name: <!i><lang:item.expandeddelight.glow_berry_jelly>
+    events:
+      - on: consume
+        functions:
+          - type: potion_effect
+            potion-effect: minecraft:night_vision
+            duration: 400
+            amplifier: 0
+
+  expandeddelight:cranberry_jelly:
+    template: expandeddelight:jelly_template
+    data:
+      item-name: <!i><lang:item.expandeddelight.cranberry_jelly>
+    events:
+      - on: consume
+        functions:
+          - type: potion_effect
+            potion-effect: minecraft:absorption
+            duration: 400
+            amplifier: 0
+
+  expandeddelight:peanut_salad:
+    template: expandeddelight:bowl_food_template
+    data:
+      item-name: <!i><lang:item.expandeddelight.peanut_salad>
+      food:
+        nutrition: 8
+        saturation: 0.6
+    events:
+      - on: consume
+        functions:
+          - type: potion_effect
+            potion-effect: minecraft:regeneration
+            duration: 100
+            amplifier: 0
+
+  expandeddelight:sweet_potato_salad:
+    template: expandeddelight:bowl_food_template
+    data:
+      item-name: <!i><lang:item.expandeddelight.sweet_potato_salad>
+      food:
+        nutrition: 8
+        saturation: 0.4
+    events:
+      - on: consume
+        functions:
+          - type: potion_effect
+            potion-effect: minecraft:regeneration
+            duration: 100
+            amplifier: 0
+
+  expandeddelight:goat_cheese_beetroot_salad:
+    template: expandeddelight:bowl_food_template
+    data:
+      item-name: <!i><lang:item.expandeddelight.goat_cheese_beetroot_salad>
+      food:
+        nutrition: 7
+        saturation: 0.3
+    events:
+      - on: consume
+        functions:
+          - type: potion_effect
+            potion-effect: minecraft:regeneration
+            duration: 100
+            amplifier: 0
+
+  expandeddelight:asparagus_soup:
+    template: expandeddelight:bowl_food_template
+    data:
+      item-name: <!i><lang:item.expandeddelight.asparagus_soup>
+      food:
+        nutrition: 10
+        saturation: 0.8
+    events:
+      - on: consume
+        functions:
+          - type: farmersdelight:comfort
+            duration: 120
+
+  expandeddelight:asparagus_soup_creamy:
+    template: expandeddelight:bowl_food_template
+    data:
+      item-name: <!i><lang:item.expandeddelight.asparagus_soup_creamy>
+      food:
+        nutrition: 11
+        saturation: 0.9
+    events:
+      - on: consume
+        functions:
+          - type: farmersdelight:comfort
+            duration: 120
+
+  expandeddelight:peanut_honey_soup:
+    template: expandeddelight:bowl_food_template
+    data:
+      item-name: <!i><lang:item.expandeddelight.peanut_honey_soup>
+      food:
+        nutrition: 10
+        saturation: 0.8
+    events:
+      - on: consume
+        functions:
+          - type: farmersdelight:comfort
+            duration: 120
+
+  expandeddelight:mac_and_cheese:
+    template: expandeddelight:bowl_food_template
+    data:
+      item-name: <!i><lang:item.expandeddelight.mac_and_cheese>
+      food:
+        nutrition: 12
+        saturation: 0.8
+    events:
+      - on: consume
+        functions:
+          - type: farmersdelight:comfort
+            duration: 120
+
+  expandeddelight:asparagus_and_bacon_cheesy:
+    template: expandeddelight:bowl_food_template
+    data:
+      item-name: <!i><lang:item.expandeddelight.asparagus_and_bacon_cheesy>
+      food:
+        nutrition: 10
+        saturation: 0.8
+    events:
+      - on: consume
+        functions:
+          - type: farmersdelight:nourishment
+            duration: 180
+
+  expandeddelight:asparagus_mushroom_pasta:
+    template: expandeddelight:bowl_food_template
+    data:
+      item-name: <!i><lang:item.expandeddelight.asparagus_mushroom_pasta>
+      food:
+        nutrition: 12
+        saturation: 0.9
+    events:
+      - on: consume
+        functions:
+          - type: farmersdelight:nourishment
+            duration: 180
+
+  expandeddelight:asparagus_frittata:
+    template: expandeddelight:bowl_food_template
+    data:
+      item-name: <!i><lang:item.expandeddelight.asparagus_frittata>
+      food:
+        nutrition: 11
+        saturation: 0.8
+    events:
+      - on: consume
+        functions:
+          - type: farmersdelight:nourishment
+            duration: 180
+
+  expandeddelight:peperonata:
+    template: expandeddelight:bowl_food_template
+    data:
+      item-name: <!i><lang:item.expandeddelight.peperonata>
+      food:
+        nutrition: 12
+        saturation: 0.9
+    events:
+      - on: consume
+        functions:
+          - type: farmersdelight:nourishment
+            duration: 180
+
+  expandeddelight:chili_pepper_salmon:
+    template: expandeddelight:bowl_food_template
+    data:
+      item-name: <!i><lang:item.expandeddelight.chili_pepper_salmon>
+      food:
+        nutrition: 13
+        saturation: 1.0
+    events:
+      - on: consume
+        functions:
+          - type: farmersdelight:nourishment
+            duration: 180
+
+  expandeddelight:cranberry_chicken:
+    template: expandeddelight:bowl_food_template
+    data:
+      item-name: <!i><lang:item.expandeddelight.cranberry_chicken>
+      food:
+        nutrition: 10
+        saturation: 0.8
+    events:
+      - on: consume
+        functions:
+          - type: farmersdelight:nourishment
+            duration: 180
+
+  expandeddelight:sweet_potato_casserole:
+    template: expandeddelight:bowl_food_template
+    data:
+      item-name: <!i><lang:item.expandeddelight.sweet_potato_casserole>
+      food:
+        nutrition: 11
+        saturation: 0.8
+    events:
+      - on: consume
+        functions:
+          - type: farmersdelight:nourishment
+            duration: 180

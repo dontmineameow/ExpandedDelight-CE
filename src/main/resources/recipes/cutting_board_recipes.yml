@@ -1,0 +1,74 @@
+cutting_board_recipes:
+  cheese_wheel_slice:
+    ingredient: "expandeddelight:cheese_wheel"
+    tool: "#farmersdelight:tools/knives"
+    sound: "farmersdelight:block.cutting_board.knife"
+    results:
+      - item: "expandeddelight:cheese_slice"
+        count: 4
+
+  goat_cheese_wheel_slice:
+    ingredient: "expandeddelight:goat_cheese_wheel"
+    tool: "#farmersdelight:tools/knives"
+    sound: "farmersdelight:block.cutting_board.knife"
+    results:
+      - item: "expandeddelight:goat_cheese_slice"
+        count: 4
+
+  cranberry_cobbler_slice:
+    ingredient: "expandeddelight:cranberry_cobbler"
+    tool: "#farmersdelight:tools/knives"
+    sound: "farmersdelight:block.cutting_board.knife"
+    results:
+      - item: "expandeddelight:cranberry_cobbler_slice"
+        count: 4
+
+  honeyed_goat_cheese_tart_slice:
+    ingredient: "expandeddelight:honeyed_goat_cheese_tart"
+    tool: "#farmersdelight:tools/knives"
+    sound: "farmersdelight:block.cutting_board.knife"
+    results:
+      - item: "expandeddelight:honeyed_goat_cheese_tart_slice"
+        count: 4
+
+  cinnamon_log_strip:
+    ingredient: "expandeddelight:cinnamon_log"
+    tool: "farmersdelight:axe_strip"
+    sound: "minecraft:item.axe.strip"
+    results:
+      - item: "expandeddelight:cinnamon_stick"
+        count: 4
+      - item: "expandeddelight:stripped_cinnamon_log"
+        count: 1
+
+  cinnamon_wood_strip:
+    ingredient: "expandeddelight:cinnamon_wood"
+    tool: "farmersdelight:axe_strip"
+    sound: "minecraft:item.axe.strip"
+    results:
+      - item: "expandeddelight:cinnamon_stick"
+        count: 6
+      - item: "expandeddelight:stripped_cinnamon_wood"
+        count: 1
+
+  salt_rock_crush:
+    ingredient: "expandeddelight:salt_rock"
+    tool: "expandeddelight:crushing_mallet"
+    sound: "minecraft:block.stone.break"
+    results:
+      - item: "expandeddelight:salt"
+        count: 2
+      - item: "expandeddelight:salt"
+        count: 1
+        chance: 0.15
+
+  cinnamon_stick_crush:
+    ingredient: "expandeddelight:cinnamon_stick"
+    tool: "expandeddelight:crushing_mallet"
+    sound: "minecraft:block.wood.break"
+    results:
+      - item: "expandeddelight:cinnamon"
+        count: 2
+      - item: "expandeddelight:cinnamon"
+        count: 1
+        chance: 0.15

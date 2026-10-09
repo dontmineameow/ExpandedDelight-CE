@@ -1,0 +1,7 @@
+juicer-gui:
+  title: "<white><shift:-6><image:expandeddelight:juicer_gui>"
+  rows: 3
+  layout:
+    - "XXIXXXPXX"
+    - "XXIXXBXXX"
+    - "XXXXXCXXX"

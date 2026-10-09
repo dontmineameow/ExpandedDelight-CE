@@ -1,0 +1,15 @@
+name: ExpandedDelight
+version: '${version}'
+main: com.huidu.expandeddelight.ExpandedDelightPlugin
+api-version: '1.21'
+author: huidu
+description: Farmer's Delight Paper/Folia Addon - Expanded Delight port
+
+dependencies:
+  server:
+    CraftEngine:
+      load: BEFORE
+      required: true
+    FarmersDelight:
+      load: BEFORE
+      required: true

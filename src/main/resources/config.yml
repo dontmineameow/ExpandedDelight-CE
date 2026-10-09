@@ -1,0 +1,7 @@
+# ExpandedDelight 配置檔
+
+juicer-gui:
+  # 水平 X 軸位移像素（負數向左，正數向右）
+  shift-x: -8
+  # 自訂標題樣板，可使用 MiniMessage 語法與 <shift:X> 標籤
+  title: "<white><shift:{shift_x}><image:expandeddelight:juicer_gui>"

@@ -1,0 +1,60 @@
+templates:
+  expandeddelight:icons:
+    model:
+      type: minecraft:model
+      path: ${__NAMESPACE__}:gui/icons/${__ID__}
+      generation:
+        parent: minecraft:item/generated
+        textures:
+          layer0: ${__NAMESPACE__}:gui/sprites/icons/${__ID__}
+
+items:
+  expandeddelight:juicer_progress_0:
+    template: expandeddelight:icons
+  expandeddelight:juicer_progress_1:
+    template: expandeddelight:icons
+  expandeddelight:juicer_progress_2:
+    template: expandeddelight:icons
+  expandeddelight:juicer_progress_3:
+    template: expandeddelight:icons
+  expandeddelight:juicer_progress_4:
+    template: expandeddelight:icons
+  expandeddelight:juicer_progress_5:
+    template: expandeddelight:icons
+  expandeddelight:juicer_progress_6:
+    template: expandeddelight:icons
+  expandeddelight:juicer_progress_7:
+    template: expandeddelight:icons
+  expandeddelight:juicer_progress_8:
+    template: expandeddelight:icons
+  expandeddelight:juicer_progress_9:
+    template: expandeddelight:icons
+  expandeddelight:juicer_progress_10:
+    template: expandeddelight:icons
+  expandeddelight:juicer_progress_11:
+    template: expandeddelight:icons
+  expandeddelight:juicer_progress_12:
+    template: expandeddelight:icons
+  expandeddelight:juicer_progress_13:
+    template: expandeddelight:icons
+  expandeddelight:juicer_progress_14:
+    template: expandeddelight:icons
+  expandeddelight:juicer_progress_15:
+    template: expandeddelight:icons
+  expandeddelight:juicer_progress_16:
+    template: expandeddelight:icons
+  expandeddelight:juicer_progress_17:
+    template: expandeddelight:icons
+  expandeddelight:juicer_progress_18:
+    template: expandeddelight:icons
+  expandeddelight:juicer_progress_19:
+    template: expandeddelight:icons
+  expandeddelight:juicer_progress_20:
+    template: expandeddelight:icons
+
+images:
+  expandeddelight:juicer_gui:
+    file: expandeddelight:gui/juicer_gui.png
+    height: 75
+    ascent: 12
+    font: farmersdelight:custom

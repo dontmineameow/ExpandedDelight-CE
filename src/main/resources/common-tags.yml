@@ -1,0 +1,18 @@
+tags:
+  "c:crops/asparagus":
+    - "expandeddelight:asparagus"
+  "c:crops/sweet_potato":
+    - "expandeddelight:sweet_potato"
+  "c:crops/chili_pepper":
+    - "expandeddelight:chili_pepper"
+  "c:crops/peanut":
+    - "expandeddelight:peanut"
+  "c:fruits/cranberries":
+    - "expandeddelight:cranberries"
+  "c:fruits/lemon":
+    - "expandeddelight:lemon"
+  "c:dusts/salt":
+    - "expandeddelight:salt"
+  "c:foods/cheese":
+    - "expandeddelight:cheese_slice"
+    - "expandeddelight:goat_cheese_slice"

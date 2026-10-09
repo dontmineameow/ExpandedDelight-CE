@@ -1,0 +1,196 @@
+cooking_pot_recipes:
+  cinnamon_apples:
+    ingredients:
+      - "minecraft:water_bucket"
+      - "minecraft:apple"
+      - "expandeddelight:cinnamon"
+      - "minecraft:sugar"
+    container: "minecraft:bowl"
+    result: "expandeddelight:cinnamon_apples"
+    cook-time: 200
+    experience: 0.5
+    category: misc
+
+  cinnamon_rice:
+    ingredients:
+      - "farmersdelight:rice"
+      - "expandeddelight:cinnamon"
+    container: "minecraft:bowl"
+    result: "expandeddelight:cinnamon_rice"
+    cook-time: 200
+    experience: 0.5
+    category: misc
+
+  sweet_berry_jelly:
+    ingredients:
+      - "minecraft:sweet_berries"
+      - "minecraft:sweet_berries"
+      - "minecraft:sugar"
+    container: "expandeddelight:glass_jar"
+    result: "expandeddelight:sweet_berry_jelly"
+    cook-time: 200
+    experience: 0.35
+    category: misc
+
+  glow_berry_jelly:
+    ingredients:
+      - "minecraft:glow_berries"
+      - "minecraft:glow_berries"
+      - "minecraft:sugar"
+    container: "expandeddelight:glass_jar"
+    result: "expandeddelight:glow_berry_jelly"
+    cook-time: 200
+    experience: 0.35
+    category: misc
+
+  cranberry_jelly:
+    ingredients:
+      - "expandeddelight:cranberries"
+      - "expandeddelight:cranberries"
+      - "minecraft:sugar"
+    container: "expandeddelight:glass_jar"
+    result: "expandeddelight:cranberry_jelly"
+    cook-time: 200
+    experience: 0.35
+    category: misc
+
+  peanut_butter:
+    ingredients:
+      - "expandeddelight:peanut"
+      - "expandeddelight:peanut"
+      - "#c:drinks/milk"
+    container: "minecraft:bowl"
+    result: "expandeddelight:peanut_butter"
+    cook-time: 100
+    experience: 0.35
+    category: misc
+
+  asparagus_soup:
+    ingredients:
+      - "minecraft:water_bucket"
+      - "expandeddelight:asparagus"
+      - "#c:foods/leafy_green"
+    container: "minecraft:bowl"
+    result: "expandeddelight:asparagus_soup"
+    cook-time: 200
+    experience: 0.8
+    category: meals
+
+  asparagus_soup_creamy:
+    ingredients:
+      - "#c:drinks/milk"
+      - "expandeddelight:asparagus"
+      - "#c:foods/leafy_green"
+    container: "minecraft:bowl"
+    result: "expandeddelight:asparagus_soup_creamy"
+    cook-time: 200
+    experience: 0.8
+    category: meals
+
+  peanut_honey_soup:
+    ingredients:
+      - "#c:drinks/milk"
+      - "expandeddelight:peanut"
+      - "minecraft:honey_bottle"
+    container: "minecraft:bowl"
+    result: "expandeddelight:peanut_honey_soup"
+    cook-time: 200
+    experience: 0.8
+    category: meals
+
+  peperonata:
+    ingredients:
+      - "#c:vegetables"
+      - "expandeddelight:chili_pepper"
+      - "farmersdelight:onion"
+      - "farmersdelight:tomato"
+      - "farmersdelight:raw_pasta"
+    container: "minecraft:bowl"
+    result: "expandeddelight:peperonata"
+    cook-time: 200
+    experience: 1.3
+    category: meals
+
+  asparagus_and_bacon_cheesy:
+    ingredients:
+      - "farmersdelight:bacon"
+      - "expandeddelight:asparagus"
+      - "farmersdelight:onion"
+      - "expandeddelight:cheese_slice"
+    container: "minecraft:bowl"
+    result: "expandeddelight:asparagus_and_bacon_cheesy"
+    cook-time: 200
+    experience: 1.2
+    category: meals
+
+  mac_and_cheese:
+    ingredients:
+      - "#c:drinks/milk"
+      - "expandeddelight:cheese_slice"
+      - "farmersdelight:raw_pasta"
+      - "expandeddelight:salt"
+    container: "minecraft:bowl"
+    result: "expandeddelight:mac_and_cheese"
+    cook-time: 200
+    experience: 1.0
+    category: meals
+
+  asparagus_mushroom_pasta:
+    ingredients:
+      - "farmersdelight:raw_pasta"
+      - "expandeddelight:asparagus"
+      - "farmersdelight:onion"
+      - "minecraft:brown_mushroom"
+    container: "minecraft:bowl"
+    result: "expandeddelight:asparagus_mushroom_pasta"
+    cook-time: 200
+    experience: 1.3
+    category: meals
+
+  asparagus_frittata:
+    ingredients:
+      - "minecraft:egg"
+      - "minecraft:egg"
+      - "expandeddelight:asparagus"
+      - "expandeddelight:cheese_slice"
+      - "expandeddelight:salt"
+    container: "minecraft:bowl"
+    result: "expandeddelight:asparagus_frittata"
+    cook-time: 200
+    experience: 1.2
+    category: meals
+
+  chili_pepper_salmon:
+    ingredients:
+      - "minecraft:cooked_salmon"
+      - "expandeddelight:chili_pepper"
+      - "farmersdelight:rice"
+      - "farmersdelight:onion"
+    container: "minecraft:bowl"
+    result: "expandeddelight:chili_pepper_salmon"
+    cook-time: 200
+    experience: 1.3
+    category: meals
+
+  cranberry_chicken:
+    ingredients:
+      - "expandeddelight:cranberries"
+      - "minecraft:cooked_chicken"
+      - "farmersdelight:onion"
+    container: "minecraft:bowl"
+    result: "expandeddelight:cranberry_chicken"
+    cook-time: 200
+    experience: 0.9
+    category: meals
+
+  sweet_potato_casserole:
+    ingredients:
+      - "expandeddelight:sweet_potato"
+      - "#c:drinks/milk"
+      - "minecraft:egg"
+      - "minecraft:sugar"
+    container: "minecraft:bowl"
+    result: "expandeddelight:sweet_potato_casserole"
+    cook-time: 200
+    experience: 0.9
+    category: meals

@@ -1,0 +1,45 @@
+juicer_recipes:
+  apple_juice:
+    ingredients:
+      - "minecraft:apple"
+      - "minecraft:sugar"
+    container: "minecraft:glass_bottle"
+    result: "expandeddelight:apple_juice"
+    time: 200
+    experience: 1.0
+
+  sweet_berry_juice:
+    ingredients:
+      - "minecraft:sweet_berries"
+      - "minecraft:sugar"
+    container: "minecraft:glass_bottle"
+    result: "expandeddelight:sweet_berry_juice"
+    time: 200
+    experience: 1.0
+
+  glow_berry_juice:
+    ingredients:
+      - "minecraft:glow_berries"
+      - "minecraft:sugar"
+    container: "minecraft:glass_bottle"
+    result: "expandeddelight:glow_berry_juice"
+    time: 200
+    experience: 1.0
+
+  cranberry_juice:
+    ingredients:
+      - "expandeddelight:cranberries"
+      - "minecraft:sugar"
+    container: "minecraft:glass_bottle"
+    result: "expandeddelight:cranberry_juice"
+    time: 200
+    experience: 1.0
+
+  melon_juice:
+    ingredients:
+      - "minecraft:melon_slice"
+      - "minecraft:sugar"
+    container: "minecraft:glass_bottle"
+    result: "farmersdelight:melon_juice"
+    time: 200
+    experience: 1.0

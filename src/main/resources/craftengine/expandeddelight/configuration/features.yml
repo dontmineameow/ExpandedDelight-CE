@@ -1,0 +1,608 @@
+placed-features:
+  expandeddelight:salt_ore:
+    environment:
+      - minecraft:overworld
+    biome:
+      - minecraft:ocean
+      - minecraft:deep_ocean
+      - minecraft:warm_ocean
+      - minecraft:lukewarm_ocean
+      - minecraft:deep_lukewarm_ocean
+      - minecraft:cold_ocean
+      - minecraft:deep_cold_ocean
+      - minecraft:frozen_ocean
+      - minecraft:deep_frozen_ocean
+    feature:
+      type: 'minecraft:ore'
+      config:
+        discard_chance_on_air_exposure: 0.0
+        size: 9
+        targets:
+          - state:
+              Name: 'expandeddelight:salt_ore'
+            target:
+              predicate_type: 'minecraft:tag_match'
+              tag: 'minecraft:stone_ore_replaceables'
+          - state:
+              Name: 'expandeddelight:deepslate_salt_ore'
+            target:
+              predicate_type: 'minecraft:tag_match'
+              tag: 'minecraft:deepslate_ore_replaceables'
+    placement:
+      - type: 'minecraft:count'
+        count: 12
+      - type: 'minecraft:in_square'
+      - type: 'minecraft:height_range'
+        height:
+          type: 'minecraft:uniform'
+          min_inclusive:
+            absolute: -20
+          max_inclusive:
+            absolute: 60
+      - type: 'minecraft:biome'
+
+  expandeddelight:wild_asparagus:
+    biome:
+      - minecraft:plains
+      - minecraft:sunflower_plains
+      - minecraft:meadow
+    environment:
+      - minecraft:overworld
+    feature:
+      $$>=26.3:
+        type: 'minecraft:simple_block'
+        to_place:
+          type: 'minecraft:simple'
+          state:
+            id: 'expandeddelight:wild_asparagus'
+      $$26.1~26.2:
+        type: 'minecraft:simple_block'
+        config:
+          to_place:
+            type: 'minecraft:simple_state_provider'
+            state:
+              Name: 'expandeddelight:wild_asparagus'
+      $$fallback:
+        type: 'minecraft:simple_block'
+        config:
+          to_place:
+            type: 'minecraft:simple_state_provider'
+            state:
+              Name: 'expandeddelight:wild_asparagus'
+    placement:
+      $$>=26.3:
+        - type: 'minecraft:rarity_filter'
+          chance: 18
+        - type: 'minecraft:in_square'
+        - type: 'minecraft:heightmap'
+          heightmap: MOTION_BLOCKING
+        - type: 'minecraft:count'
+          count: 64
+        - type: 'minecraft:offset'
+          x:
+            type: 'minecraft:trapezoid'
+            max: 7
+            min: -7
+            plateau: 0
+          y:
+            type: 'minecraft:trapezoid'
+            max: 3
+            min: -3
+            plateau: 0
+          z:
+            type: 'minecraft:trapezoid'
+            max: 7
+            min: -7
+            plateau: 0
+        - type: 'minecraft:block_predicate_filter'
+          predicate:
+            type: 'minecraft:all_of'
+            predicates:
+              - type: 'minecraft:replaceable'
+              - type: 'minecraft:matching_fluids'
+                fluids: 'minecraft:empty'
+              - type: 'minecraft:matching_blocks'
+                blocks:
+                  - minecraft:dirt
+                  - minecraft:grass_block
+                offset:
+                  - 0
+                  - -1
+                  - 0
+        - type: 'minecraft:biome'
+      $$26.1~26.2:
+        - type: 'minecraft:rarity_filter'
+          chance: 18
+        - type: 'minecraft:in_square'
+        - type: 'minecraft:heightmap'
+          heightmap: MOTION_BLOCKING
+        - type: 'minecraft:count'
+          count: 64
+        - type: 'minecraft:random_offset'
+          xz_spread:
+            type: 'minecraft:trapezoid'
+            max: 7
+            min: -7
+            plateau: 0
+          y_spread:
+            type: 'minecraft:trapezoid'
+            max: 3
+            min: -3
+            plateau: 0
+        - type: 'minecraft:block_predicate_filter'
+          predicate:
+            type: 'minecraft:all_of'
+            predicates:
+              - type: 'minecraft:replaceable'
+              - type: 'minecraft:matching_fluids'
+                fluids: 'minecraft:empty'
+              - type: 'minecraft:matching_blocks'
+                blocks:
+                  - minecraft:dirt
+                  - minecraft:grass_block
+                offset:
+                  - 0
+                  - -1
+                  - 0
+        - type: 'minecraft:biome'
+      $$fallback:
+        - type: 'minecraft:rarity_filter'
+          chance: 18
+        - type: 'minecraft:in_square'
+        - type: 'minecraft:heightmap'
+          heightmap: MOTION_BLOCKING
+        - type: 'minecraft:biome'
+
+  expandeddelight:wild_sweet_potato:
+    biome:
+      - minecraft:jungle
+      - minecraft:sparse_jungle
+      - minecraft:bamboo_jungle
+    environment:
+      - minecraft:overworld
+    feature:
+      $$>=26.3:
+        type: 'minecraft:simple_block'
+        to_place:
+          type: 'minecraft:simple'
+          state:
+            id: 'expandeddelight:wild_sweet_potato'
+      $$26.1~26.2:
+        type: 'minecraft:simple_block'
+        config:
+          to_place:
+            type: 'minecraft:simple_state_provider'
+            state:
+              Name: 'expandeddelight:wild_sweet_potato'
+      $$fallback:
+        type: 'minecraft:simple_block'
+        config:
+          to_place:
+            type: 'minecraft:simple_state_provider'
+            state:
+              Name: 'expandeddelight:wild_sweet_potato'
+    placement:
+      $$>=26.3:
+        - type: 'minecraft:rarity_filter'
+          chance: 18
+        - type: 'minecraft:in_square'
+        - type: 'minecraft:heightmap'
+          heightmap: MOTION_BLOCKING
+        - type: 'minecraft:count'
+          count: 64
+        - type: 'minecraft:offset'
+          x:
+            type: 'minecraft:trapezoid'
+            max: 7
+            min: -7
+            plateau: 0
+          y:
+            type: 'minecraft:trapezoid'
+            max: 3
+            min: -3
+            plateau: 0
+          z:
+            type: 'minecraft:trapezoid'
+            max: 7
+            min: -7
+            plateau: 0
+        - type: 'minecraft:block_predicate_filter'
+          predicate:
+            type: 'minecraft:all_of'
+            predicates:
+              - type: 'minecraft:replaceable'
+              - type: 'minecraft:matching_fluids'
+                fluids: 'minecraft:empty'
+              - type: 'minecraft:matching_blocks'
+                blocks:
+                  - minecraft:dirt
+                  - minecraft:grass_block
+                offset:
+                  - 0
+                  - -1
+                  - 0
+        - type: 'minecraft:biome'
+      $$26.1~26.2:
+        - type: 'minecraft:rarity_filter'
+          chance: 18
+        - type: 'minecraft:in_square'
+        - type: 'minecraft:heightmap'
+          heightmap: MOTION_BLOCKING
+        - type: 'minecraft:count'
+          count: 64
+        - type: 'minecraft:random_offset'
+          xz_spread:
+            type: 'minecraft:trapezoid'
+            max: 7
+            min: -7
+            plateau: 0
+          y_spread:
+            type: 'minecraft:trapezoid'
+            max: 3
+            min: -3
+            plateau: 0
+        - type: 'minecraft:block_predicate_filter'
+          predicate:
+            type: 'minecraft:all_of'
+            predicates:
+              - type: 'minecraft:replaceable'
+              - type: 'minecraft:matching_fluids'
+                fluids: 'minecraft:empty'
+              - type: 'minecraft:matching_blocks'
+                blocks:
+                  - minecraft:dirt
+                  - minecraft:grass_block
+                offset:
+                  - 0
+                  - -1
+                  - 0
+        - type: 'minecraft:biome'
+      $$fallback:
+        - type: 'minecraft:rarity_filter'
+          chance: 18
+        - type: 'minecraft:in_square'
+        - type: 'minecraft:heightmap'
+          heightmap: MOTION_BLOCKING
+        - type: 'minecraft:biome'
+
+  expandeddelight:wild_chili_pepper:
+    biome:
+      - minecraft:desert
+      - minecraft:badlands
+      - minecraft:eroded_badlands
+      - minecraft:wooded_badlands
+    environment:
+      - minecraft:overworld
+    feature:
+      $$>=26.3:
+        type: 'minecraft:simple_block'
+        to_place:
+          type: 'minecraft:simple'
+          state:
+            id: 'expandeddelight:wild_chili_pepper'
+      $$26.1~26.2:
+        type: 'minecraft:simple_block'
+        config:
+          to_place:
+            type: 'minecraft:simple_state_provider'
+            state:
+              Name: 'expandeddelight:wild_chili_pepper'
+      $$fallback:
+        type: 'minecraft:simple_block'
+        config:
+          to_place:
+            type: 'minecraft:simple_state_provider'
+            state:
+              Name: 'expandeddelight:wild_chili_pepper'
+    placement:
+      $$>=26.3:
+        - type: 'minecraft:rarity_filter'
+          chance: 18
+        - type: 'minecraft:in_square'
+        - type: 'minecraft:heightmap'
+          heightmap: MOTION_BLOCKING
+        - type: 'minecraft:count'
+          count: 64
+        - type: 'minecraft:offset'
+          x:
+            type: 'minecraft:trapezoid'
+            max: 7
+            min: -7
+            plateau: 0
+          y:
+            type: 'minecraft:trapezoid'
+            max: 3
+            min: -3
+            plateau: 0
+          z:
+            type: 'minecraft:trapezoid'
+            max: 7
+            min: -7
+            plateau: 0
+        - type: 'minecraft:block_predicate_filter'
+          predicate:
+            type: 'minecraft:all_of'
+            predicates:
+              - type: 'minecraft:replaceable'
+              - type: 'minecraft:matching_fluids'
+                fluids: 'minecraft:empty'
+              - type: 'minecraft:matching_blocks'
+                blocks:
+                  - minecraft:dirt
+                  - minecraft:grass_block
+                  - minecraft:sand
+                  - minecraft:red_sand
+                offset:
+                  - 0
+                  - -1
+                  - 0
+        - type: 'minecraft:biome'
+      $$26.1~26.2:
+        - type: 'minecraft:rarity_filter'
+          chance: 18
+        - type: 'minecraft:in_square'
+        - type: 'minecraft:heightmap'
+          heightmap: MOTION_BLOCKING
+        - type: 'minecraft:count'
+          count: 64
+        - type: 'minecraft:random_offset'
+          xz_spread:
+            type: 'minecraft:trapezoid'
+            max: 7
+            min: -7
+            plateau: 0
+          y_spread:
+            type: 'minecraft:trapezoid'
+            max: 3
+            min: -3
+            plateau: 0
+        - type: 'minecraft:block_predicate_filter'
+          predicate:
+            type: 'minecraft:all_of'
+            predicates:
+              - type: 'minecraft:replaceable'
+              - type: 'minecraft:matching_fluids'
+                fluids: 'minecraft:empty'
+              - type: 'minecraft:matching_blocks'
+                blocks:
+                  - minecraft:dirt
+                  - minecraft:grass_block
+                  - minecraft:sand
+                  - minecraft:red_sand
+                offset:
+                  - 0
+                  - -1
+                  - 0
+        - type: 'minecraft:biome'
+      $$fallback:
+        - type: 'minecraft:rarity_filter'
+          chance: 18
+        - type: 'minecraft:in_square'
+        - type: 'minecraft:heightmap'
+          heightmap: MOTION_BLOCKING
+        - type: 'minecraft:biome'
+
+  expandeddelight:wild_peanuts:
+    biome:
+      - minecraft:savanna
+      - minecraft:savanna_plateau
+      - minecraft:windswept_savanna
+    environment:
+      - minecraft:overworld
+    feature:
+      $$>=26.3:
+        type: 'minecraft:simple_block'
+        to_place:
+          type: 'minecraft:simple'
+          state:
+            id: 'expandeddelight:wild_peanuts'
+      $$26.1~26.2:
+        type: 'minecraft:simple_block'
+        config:
+          to_place:
+            type: 'minecraft:simple_state_provider'
+            state:
+              Name: 'expandeddelight:wild_peanuts'
+      $$fallback:
+        type: 'minecraft:simple_block'
+        config:
+          to_place:
+            type: 'minecraft:simple_state_provider'
+            state:
+              Name: 'expandeddelight:wild_peanuts'
+    placement:
+      $$>=26.3:
+        - type: 'minecraft:rarity_filter'
+          chance: 18
+        - type: 'minecraft:in_square'
+        - type: 'minecraft:heightmap'
+          heightmap: MOTION_BLOCKING
+        - type: 'minecraft:count'
+          count: 64
+        - type: 'minecraft:offset'
+          x:
+            type: 'minecraft:trapezoid'
+            max: 7
+            min: -7
+            plateau: 0
+          y:
+            type: 'minecraft:trapezoid'
+            max: 3
+            min: -3
+            plateau: 0
+          z:
+            type: 'minecraft:trapezoid'
+            max: 7
+            min: -7
+            plateau: 0
+        - type: 'minecraft:block_predicate_filter'
+          predicate:
+            type: 'minecraft:all_of'
+            predicates:
+              - type: 'minecraft:replaceable'
+              - type: 'minecraft:matching_fluids'
+                fluids: 'minecraft:empty'
+              - type: 'minecraft:matching_blocks'
+                blocks:
+                  - minecraft:dirt
+                  - minecraft:grass_block
+                offset:
+                  - 0
+                  - -1
+                  - 0
+        - type: 'minecraft:biome'
+      $$26.1~26.2:
+        - type: 'minecraft:rarity_filter'
+          chance: 18
+        - type: 'minecraft:in_square'
+        - type: 'minecraft:heightmap'
+          heightmap: MOTION_BLOCKING
+        - type: 'minecraft:count'
+          count: 64
+        - type: 'minecraft:random_offset'
+          xz_spread:
+            type: 'minecraft:trapezoid'
+            max: 7
+            min: -7
+            plateau: 0
+          y_spread:
+            type: 'minecraft:trapezoid'
+            max: 3
+            min: -3
+            plateau: 0
+        - type: 'minecraft:block_predicate_filter'
+          predicate:
+            type: 'minecraft:all_of'
+            predicates:
+              - type: 'minecraft:replaceable'
+              - type: 'minecraft:matching_fluids'
+                fluids: 'minecraft:empty'
+              - type: 'minecraft:matching_blocks'
+                blocks:
+                  - minecraft:dirt
+                  - minecraft:grass_block
+                offset:
+                  - 0
+                  - -1
+                  - 0
+        - type: 'minecraft:biome'
+      $$fallback:
+        - type: 'minecraft:rarity_filter'
+          chance: 18
+        - type: 'minecraft:in_square'
+        - type: 'minecraft:heightmap'
+          heightmap: MOTION_BLOCKING
+        - type: 'minecraft:biome'
+
+  expandeddelight:cranberry_plant:
+    biome:
+      - minecraft:swamp
+      - minecraft:mangrove_swamp
+    environment:
+      - minecraft:overworld
+    feature:
+      $$>=26.3:
+        type: 'minecraft:simple_block'
+        to_place:
+          type: 'minecraft:simple'
+          state:
+            id: 'expandeddelight:cranberry_plant'
+      $$26.1~26.2:
+        type: 'minecraft:simple_block'
+        config:
+          to_place:
+            type: 'minecraft:simple_state_provider'
+            state:
+              Name: 'expandeddelight:cranberry_plant'
+      $$fallback:
+        type: 'minecraft:simple_block'
+        config:
+          to_place:
+            type: 'minecraft:simple_state_provider'
+            state:
+              Name: 'expandeddelight:cranberry_plant'
+    placement:
+      $$>=26.3:
+        - type: 'minecraft:rarity_filter'
+          chance: 15
+        - type: 'minecraft:in_square'
+        - type: 'minecraft:heightmap'
+          heightmap: MOTION_BLOCKING
+        - type: 'minecraft:count'
+          count: 64
+        - type: 'minecraft:offset'
+          x:
+            type: 'minecraft:trapezoid'
+            max: 7
+            min: -7
+            plateau: 0
+          y:
+            type: 'minecraft:trapezoid'
+            max: 3
+            min: -3
+            plateau: 0
+          z:
+            type: 'minecraft:trapezoid'
+            max: 7
+            min: -7
+            plateau: 0
+        - type: 'minecraft:block_predicate_filter'
+          predicate:
+            type: 'minecraft:all_of'
+            predicates:
+              - type: 'minecraft:replaceable'
+              - type: 'minecraft:matching_fluids'
+                fluids: 'minecraft:empty'
+              - type: 'minecraft:matching_blocks'
+                blocks:
+                  - minecraft:dirt
+                  - minecraft:grass_block
+                  - minecraft:mud
+                offset:
+                  - 0
+                  - -1
+                  - 0
+        - type: 'minecraft:biome'
+      $$26.1~26.2:
+        - type: 'minecraft:rarity_filter'
+          chance: 15
+        - type: 'minecraft:in_square'
+        - type: 'minecraft:heightmap'
+          heightmap: MOTION_BLOCKING
+        - type: 'minecraft:count'
+          count: 64
+        - type: 'minecraft:random_offset'
+          xz_spread:
+            type: 'minecraft:trapezoid'
+            max: 7
+            min: -7
+            plateau: 0
+          y_spread:
+            type: 'minecraft:trapezoid'
+            max: 3
+            min: -3
+            plateau: 0
+        - type: 'minecraft:block_predicate_filter'
+          predicate:
+            type: 'minecraft:all_of'
+            predicates:
+              - type: 'minecraft:replaceable'
+              - type: 'minecraft:matching_fluids'
+                fluids: 'minecraft:empty'
+              - type: 'minecraft:matching_blocks'
+                blocks:
+                  - minecraft:dirt
+                  - minecraft:grass_block
+                  - minecraft:mud
+                offset:
+                  - 0
+                  - -1
+                  - 0
+        - type: 'minecraft:biome'
+      $$fallback:
+        - type: 'minecraft:rarity_filter'
+          chance: 15
+        - type: 'minecraft:in_square'
+        - type: 'minecraft:heightmap'
+          heightmap: MOTION_BLOCKING
+        - type: 'minecraft:biome'

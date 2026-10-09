@@ -1,0 +1,855 @@
+templates:
+  expandeddelight:pie_block_item_template:
+    model: ${__NAMESPACE__}:block/${__ID__}
+    data:
+      lore: '<!i><dark_gray><lang:farmersdelight.tooltip.placeable></dark_gray>'
+      item-name: <!i><lang:block.${__NAMESPACE__}.${__ID__}>
+    behavior:
+      type: ground_block_item
+      block: ${__NAMESPACE__}:${__ID__}
+
+  expandeddelight:solid_block_template:
+    loot:
+      template: default:loot_table/self
+    states:
+      auto_state:
+        type: non_tintable_leaves
+        id: transparent_solid
+      model: farmersdelight:block/invisible_cube
+      entity-renderer:
+        item: ${__NAMESPACE__}:${__ID__}
+
+  expandeddelight:real_solid_block_template:
+    loot:
+      template: default:loot_table/self
+    states:
+      auto_state:
+        type: solid
+      model: ${__NAMESPACE__}:block/${__ID__}
+
+  expandeddelight:directional_block_template:
+    loot:
+      template: default:loot_table/self
+    states:
+      properties:
+        facing:
+          type: 4-direction
+          default: north
+      appearances:
+        east:
+          auto_state:
+            type: non_tintable_leaves
+            id: transparent_solid
+          model: farmersdelight:block/invisible_cube
+          entity-renderer:
+            item: ${__NAMESPACE__}:${__ID__}_block
+            rotation: 90
+        north:
+          auto_state:
+            type: non_tintable_leaves
+            id: transparent_solid
+          model: farmersdelight:block/invisible_cube
+          entity-renderer:
+            item: ${__NAMESPACE__}:${__ID__}_block
+        south:
+          auto_state:
+            type: non_tintable_leaves
+            id: transparent_solid
+          model: farmersdelight:block/invisible_cube
+          entity-renderer:
+            item: ${__NAMESPACE__}:${__ID__}_block
+            rotation: 180
+        west:
+          auto_state:
+            type: non_tintable_leaves
+            id: transparent_solid
+          model: farmersdelight:block/invisible_cube
+          entity-renderer:
+            item: ${__NAMESPACE__}:${__ID__}_block
+            rotation: 270
+      variants:
+        facing=east:
+          appearance: east
+
+        facing=north:
+          appearance: north
+        facing=south:
+          appearance: south
+        facing=west:
+          appearance: west
+
+  expandeddelight:sliceable_food_events:
+    events:
+      - on: break
+        conditions:
+          - type: test_flag
+            flag: interact
+          - type: match_block_property
+            properties:
+              bites: 0
+        functions:
+          - type: drop_loot
+            x: <arg:position.block_x> + 0.5
+            y: <arg:position.block_y> + 0.5
+            z: <arg:position.block_z> + 0.5
+            loot:
+              pools:
+                - rolls: 1
+                  entries:
+                    - type: item
+                      item: ${drop_item}
+                      count: 1
+      - on: right_click
+        conditions:
+          - type: test_flag
+            flag: interact
+          - type: match_item
+            item: "farmersdelight:.*_knife"
+            regex: true
+          - type: match_block_property
+            properties:
+              bites: 0
+        functions:
+          - type: update_interaction_tick
+          - type: drop_loot
+            x: <arg:position.block_x> + 0.5
+            y: <arg:position.block_y> + 0.3
+            z: <arg:position.block_z> + 0.5
+            loot:
+              pools:
+                - rolls: 1
+                  entries:
+                    - type: item
+                      item: ${slice_item}
+                      count: 1
+          - type: update_block_property
+            properties:
+              bites: 1
+          - type: swing_hand
+          - type: play_sound
+            sound: farmersdelight:block.food.slice
+          - type: cancel_event
+      - on: right_click
+        conditions:
+          - type: test_flag
+            flag: interact
+          - type: match_item
+            item: "farmersdelight:.*_knife"
+            regex: true
+          - type: match_block_property
+            properties:
+              bites: 1
+        functions:
+          - type: update_interaction_tick
+          - type: drop_loot
+            x: <arg:position.block_x> + 0.5
+            y: <arg:position.block_y> + 0.3
+            z: <arg:position.block_z> + 0.5
+            loot:
+              pools:
+                - rolls: 1
+                  entries:
+                    - type: item
+                      item: ${slice_item}
+                      count: 1
+          - type: update_block_property
+            properties:
+              bites: 2
+          - type: swing_hand
+          - type: play_sound
+            sound: farmersdelight:block.food.slice
+          - type: cancel_event
+      - on: right_click
+        conditions:
+          - type: test_flag
+            flag: interact
+          - type: match_item
+            item: "farmersdelight:.*_knife"
+            regex: true
+          - type: match_block_property
+            properties:
+              bites: 2
+        functions:
+          - type: update_interaction_tick
+          - type: drop_loot
+            x: <arg:position.block_x> + 0.5
+            y: <arg:position.block_y> + 0.3
+            z: <arg:position.block_z> + 0.5
+            loot:
+              pools:
+                - rolls: 1
+                  entries:
+                    - type: item
+                      item: ${slice_item}
+                      count: 1
+          - type: update_block_property
+            properties:
+              bites: 3
+          - type: swing_hand
+          - type: play_sound
+            sound: farmersdelight:block.food.slice
+          - type: cancel_event
+      - on: right_click
+        conditions:
+          - type: test_flag
+            flag: interact
+          - type: match_item
+            item: "farmersdelight:.*_knife"
+            regex: true
+          - type: match_block_property
+            properties:
+              bites: 3
+        functions:
+          - type: update_interaction_tick
+          - type: drop_loot
+            x: <arg:position.block_x> + 0.5
+            y: <arg:position.block_y> + 0.3
+            z: <arg:position.block_z> + 0.5
+            loot:
+              pools:
+                - rolls: 1
+                  entries:
+                    - type: item
+                      item: ${slice_item}
+                      count: 1
+          - type: break_block
+            x: <arg:position.block_x>
+            y: <arg:position.block_y>
+            z: <arg:position.block_z>
+          - type: swing_hand
+          - type: play_sound
+            sound: farmersdelight:block.food.slice
+          - type: cancel_event
+      - on: right_click
+        conditions:
+          - type: test_flag
+            flag: interact
+          - type: expression
+            expression: '<arg:player.gamemode> == "CREATIVE" || <arg:player.food> < 20'
+          - type: inverted
+            term:
+              type: match_item
+              item: "farmersdelight:.*_knife"
+              regex: true
+          - type: match_block_property
+            properties:
+              bites: 0
+        functions:
+          - type: update_interaction_tick
+          - type: set_food
+            target: self
+            food: ${nutrition}
+            add: true
+          - type: set_saturation
+            target: self
+            saturation: ${saturation}
+            add: true
+          - type: update_block_property
+            properties:
+              bites: 1
+          - type: swing_hand
+          - type: play_sound
+            sound: minecraft:entity.generic.eat
+      - on: right_click
+        conditions:
+          - type: test_flag
+            flag: interact
+          - type: expression
+            expression: '<arg:player.gamemode> == "CREATIVE" || <arg:player.food> < 20'
+          - type: inverted
+            term:
+              type: match_item
+              item: "farmersdelight:.*_knife"
+              regex: true
+          - type: match_block_property
+            properties:
+              bites: 1
+        functions:
+          - type: update_interaction_tick
+          - type: set_food
+            target: self
+            food: ${nutrition}
+            add: true
+          - type: set_saturation
+            target: self
+            saturation: ${saturation}
+            add: true
+          - type: update_block_property
+            properties:
+              bites: 2
+          - type: swing_hand
+          - type: play_sound
+            sound: minecraft:entity.generic.eat
+      - on: right_click
+        conditions:
+          - type: test_flag
+            flag: interact
+          - type: expression
+            expression: '<arg:player.gamemode> == "CREATIVE" || <arg:player.food> < 20'
+          - type: inverted
+            term:
+              type: match_item
+              item: "farmersdelight:.*_knife"
+              regex: true
+          - type: match_block_property
+            properties:
+              bites: 2
+        functions:
+          - type: update_interaction_tick
+          - type: set_food
+            target: self
+            food: ${nutrition}
+            add: true
+          - type: set_saturation
+            target: self
+            saturation: ${saturation}
+            add: true
+          - type: update_block_property
+            properties:
+              bites: 3
+          - type: swing_hand
+          - type: play_sound
+            sound: minecraft:entity.generic.eat
+      - on: right_click
+        conditions:
+          - type: test_flag
+            flag: interact
+          - type: expression
+            expression: '<arg:player.gamemode> == "CREATIVE" || <arg:player.food> < 20'
+          - type: inverted
+            term:
+              type: match_item
+              item: "farmersdelight:.*_knife"
+              regex: true
+          - type: match_block_property
+            properties:
+              bites: 3
+        functions:
+          - type: update_interaction_tick
+          - type: set_food
+            target: self
+            food: ${nutrition}
+            add: true
+          - type: set_saturation
+            target: self
+            saturation: ${saturation}
+            add: true
+          - type: break_block
+            x: <arg:position.block_x>
+            y: <arg:position.block_y>
+            z: <arg:position.block_z>
+          - type: swing_hand
+          - type: play_sound
+            sound: minecraft:entity.generic.eat
+
+blocks:
+  # --- 工作台與發酵桶 ---
+  expandeddelight:juicer:
+    template: expandeddelight:directional_block_template
+    settings:
+      hardness: 2.0
+      resistance: 2.0
+      tags:
+        - minecraft:mineable/pickaxe
+
+  expandeddelight:cask:
+    template: expandeddelight:solid_block_template
+    settings:
+      hardness: 2.0
+      resistance: 2.0
+      tags:
+        - minecraft:mineable/axe
+
+  expandeddelight:milk_cask:
+    template: expandeddelight:solid_block_template
+    settings:
+      hardness: 2.0
+      resistance: 2.0
+      tags:
+        - minecraft:mineable/axe
+
+  expandeddelight:goat_milk_cask:
+    template: expandeddelight:solid_block_template
+    settings:
+      hardness: 2.0
+      resistance: 2.0
+      tags:
+        - minecraft:mineable/axe
+
+  expandeddelight:cheese_cask:
+    template: expandeddelight:solid_block_template
+    settings:
+      hardness: 2.0
+      resistance: 2.0
+      tags:
+        - minecraft:mineable/axe
+
+  expandeddelight:goat_cheese_cask:
+    template: expandeddelight:solid_block_template
+    settings:
+      hardness: 2.0
+      resistance: 2.0
+      tags:
+        - minecraft:mineable/axe
+
+  # --- 肉桂木全套建材 ---
+  expandeddelight:cinnamon_log:
+    template: expandeddelight:solid_block_template
+    settings:
+      hardness: 2.0
+      resistance: 2.0
+      tags:
+        - minecraft:mineable/axe
+        - minecraft:logs
+
+  expandeddelight:stripped_cinnamon_log:
+    template: expandeddelight:solid_block_template
+    settings:
+      hardness: 2.0
+      resistance: 2.0
+      tags:
+        - minecraft:mineable/axe
+        - minecraft:logs
+
+  expandeddelight:cinnamon_wood:
+    template: expandeddelight:solid_block_template
+    settings:
+      hardness: 2.0
+      resistance: 2.0
+      tags:
+        - minecraft:mineable/axe
+
+  expandeddelight:stripped_cinnamon_wood:
+    template: expandeddelight:solid_block_template
+    settings:
+      hardness: 2.0
+      resistance: 2.0
+      tags:
+        - minecraft:mineable/axe
+
+  expandeddelight:cinnamon_planks:
+    template: expandeddelight:solid_block_template
+    settings:
+      hardness: 2.0
+      resistance: 3.0
+      tags:
+        - minecraft:mineable/axe
+        - minecraft:planks
+
+  expandeddelight:cinnamon_cabinet:
+    template: farmersdelight:block_cabinet_template
+
+  expandeddelight:cinnamon_leaves:
+    template: expandeddelight:solid_block_template
+    settings:
+      hardness: 0.2
+      resistance: 0.2
+      is-randomly-ticking: true
+      sounds:
+        break: minecraft:block.grass.break
+        fall: minecraft:block.grass.fall
+        hit: minecraft:block.grass.hit
+        place: minecraft:block.grass.place
+        step: minecraft:block.grass.step
+      tags:
+        - minecraft:leaves
+        - minecraft:mineable/hoe
+
+  expandeddelight:cinnamon_sapling:
+    settings:
+      hardness: 0.0
+      resistance: 0.0
+      is-randomly-ticking: true
+      sounds:
+        break: minecraft:block.grass.break
+        fall: minecraft:block.grass.fall
+        hit: minecraft:block.grass.hit
+        place: minecraft:block.grass.plant
+        step: minecraft:block.grass.step
+      tags:
+        - minecraft:saplings
+    behaviors:
+      - type: liquid_flowable_block
+      - type: bush_block
+        bottom-blocks:
+          - minecraft:dirt
+          - minecraft:grass_block
+          - minecraft:coarse_dirt
+          - minecraft:podzol
+          - minecraft:farmland
+          - farmersdelight:rich_soil
+          - farmersdelight:rich_soil_farmland
+    states:
+      auto_state:
+        type: sugar_cane
+        id: transparent
+      transparent: true
+      entity-renderer:
+        item: expandeddelight:cinnamon_sapling_block
+
+
+  # --- 儲物箱 (Crates / Bags) ---
+  expandeddelight:asparagus_crate:
+    template: farmersdelight:block_crate_template
+  expandeddelight:sweet_potato_crate:
+    template: farmersdelight:block_crate_template
+  expandeddelight:chili_pepper_crate:
+    template: farmersdelight:block_crate_template
+  expandeddelight:cranberry_bag:
+    template: farmersdelight:block_crate_template
+
+  # --- 礦石 ---
+  expandeddelight:salt_ore:
+    template: expandeddelight:real_solid_block_template
+    settings:
+      hardness: 3.0
+      resistance: 3.0
+      tags:
+        - minecraft:mineable/pickaxe
+
+  expandeddelight:deepslate_salt_ore:
+    template: expandeddelight:real_solid_block_template
+    settings:
+      hardness: 4.5
+      resistance: 3.0
+      tags:
+        - minecraft:mineable/pickaxe
+
+  # --- 食物方塊 (起司輪與派餅) ---
+  expandeddelight:cheese_wheel:
+    template:
+      - farmersdelight:sliceable_pie_states
+      - expandeddelight:sliceable_food_events
+    arguments:
+      drop_item: expandeddelight:cheese_wheel
+      slice_item: expandeddelight:cheese_slice
+      nutrition: 2
+      saturation: 0.2
+    settings:
+      push-reaction: destroy
+      hardness: 0.5
+      tags:
+        - farmersdelight:pies
+        - farmersdelight:mineable/knife
+
+  expandeddelight:goat_cheese_wheel:
+    template:
+      - farmersdelight:sliceable_pie_states
+      - expandeddelight:sliceable_food_events
+    arguments:
+      drop_item: expandeddelight:goat_cheese_wheel
+      slice_item: expandeddelight:goat_cheese_slice
+      nutrition: 2
+      saturation: 0.2
+    settings:
+      push-reaction: destroy
+      hardness: 0.5
+      tags:
+        - farmersdelight:pies
+        - farmersdelight:mineable/knife
+
+  expandeddelight:cranberry_cobbler:
+    template:
+      - farmersdelight:sliceable_pie_states
+      - expandeddelight:sliceable_food_events
+    arguments:
+      drop_item: expandeddelight:cranberry_cobbler
+      slice_item: expandeddelight:cranberry_cobbler_slice
+      nutrition: 3
+      saturation: 0.3
+    settings:
+      push-reaction: destroy
+      hardness: 0.5
+      tags:
+        - farmersdelight:pies
+        - farmersdelight:mineable/knife
+
+  expandeddelight:honeyed_goat_cheese_tart:
+    template:
+      - farmersdelight:sliceable_pie_states
+      - expandeddelight:sliceable_food_events
+    arguments:
+      drop_item: expandeddelight:honeyed_goat_cheese_tart
+      slice_item: expandeddelight:honeyed_goat_cheese_tart_slice
+      nutrition: 4
+      saturation: 0.5
+    settings:
+      push-reaction: destroy
+      hardness: 0.5
+      tags:
+        - farmersdelight:pies
+        - farmersdelight:mineable/knife
+
+items:
+  expandeddelight:cheese_wheel:
+    data:
+      item-name: <!i><lang:block.expandeddelight.cheese_wheel>
+      lore: '<!i><dark_gray><lang:farmersdelight.tooltip.placeable></dark_gray>'
+    model: expandeddelight:item/cheese_wheel
+    behavior:
+      type: ground_block_item
+      block: expandeddelight:cheese_wheel
+
+  expandeddelight:cheese_wheel_slice0:
+    data:
+      item-name: <!i><lang:block.expandeddelight.cheese_wheel>
+    model: expandeddelight:block/cheese_wheel
+  expandeddelight:cheese_wheel_slice1:
+    data:
+      item-name: <!i><lang:block.expandeddelight.cheese_wheel>
+    model: expandeddelight:block/cheese_wheel_slice1
+  expandeddelight:cheese_wheel_slice2:
+    data:
+      item-name: <!i><lang:block.expandeddelight.cheese_wheel>
+    model: expandeddelight:block/cheese_wheel_slice2
+  expandeddelight:cheese_wheel_slice3:
+    data:
+      item-name: <!i><lang:block.expandeddelight.cheese_wheel>
+    model: expandeddelight:block/cheese_wheel_slice3
+
+  expandeddelight:goat_cheese_wheel:
+    data:
+      item-name: <!i><lang:block.expandeddelight.goat_cheese_wheel>
+      lore: '<!i><dark_gray><lang:farmersdelight.tooltip.placeable></dark_gray>'
+    model: expandeddelight:item/goat_cheese_wheel
+    behavior:
+      type: ground_block_item
+      block: expandeddelight:goat_cheese_wheel
+
+  expandeddelight:goat_cheese_wheel_slice0:
+    data:
+      item-name: <!i><lang:block.expandeddelight.goat_cheese_wheel>
+    model: expandeddelight:block/goat_cheese_wheel
+  expandeddelight:goat_cheese_wheel_slice1:
+    data:
+      item-name: <!i><lang:block.expandeddelight.goat_cheese_wheel>
+    model: expandeddelight:block/goat_cheese_wheel_slice1
+  expandeddelight:goat_cheese_wheel_slice2:
+    data:
+      item-name: <!i><lang:block.expandeddelight.goat_cheese_wheel>
+    model: expandeddelight:block/goat_cheese_wheel_slice2
+  expandeddelight:goat_cheese_wheel_slice3:
+    data:
+      item-name: <!i><lang:block.expandeddelight.goat_cheese_wheel>
+    model: expandeddelight:block/goat_cheese_wheel_slice3
+
+  expandeddelight:cask:
+    data:
+      item-name: <!i><lang:block.expandeddelight.cask>
+    model: expandeddelight:block/cask
+    behavior:
+      type: block_item
+      block: expandeddelight:cask
+
+  expandeddelight:milk_cask:
+    data:
+      item-name: <!i><lang:block.expandeddelight.milk_cask>
+    model: expandeddelight:block/milk_cask
+    behavior:
+      type: block_item
+      block: expandeddelight:milk_cask
+
+  expandeddelight:goat_milk_cask:
+    data:
+      item-name: <!i><lang:block.expandeddelight.goat_milk_cask>
+    model: expandeddelight:block/goat_milk_cask
+    behavior:
+      type: block_item
+      block: expandeddelight:goat_milk_cask
+
+  expandeddelight:cheese_cask:
+    data:
+      item-name: <!i><lang:block.expandeddelight.cheese_cask>
+    model: expandeddelight:block/cheese_cask
+    behavior:
+      type: block_item
+      block: expandeddelight:cheese_cask
+
+  expandeddelight:goat_cheese_cask:
+    data:
+      item-name: <!i><lang:block.expandeddelight.goat_cheese_cask>
+    model: expandeddelight:block/goat_cheese_cask
+    behavior:
+      type: block_item
+      block: expandeddelight:goat_cheese_cask
+
+  expandeddelight:juicer:
+    data:
+      item-name: <!i><lang:block.expandeddelight.juicer>
+    model: expandeddelight:item/juicer
+    behavior:
+      type: block_item
+      block: expandeddelight:juicer
+
+  expandeddelight:juicer_block:
+    data:
+      item-name: <!i><lang:block.expandeddelight.juicer>
+    model: expandeddelight:block/juicer
+
+
+
+  # 肉桂木材方塊物品
+  expandeddelight:cinnamon_log:
+    data:
+      item-name: <!i><lang:block.expandeddelight.cinnamon_log>
+    model: expandeddelight:block/cinnamon_log
+    behavior:
+      type: block_item
+      block: expandeddelight:cinnamon_log
+  expandeddelight:stripped_cinnamon_log:
+    data:
+      item-name: <!i><lang:block.expandeddelight.stripped_cinnamon_log>
+    model: expandeddelight:block/stripped_cinnamon_log
+    behavior:
+      type: block_item
+      block: expandeddelight:stripped_cinnamon_log
+  expandeddelight:cinnamon_wood:
+    data:
+      item-name: <!i><lang:block.expandeddelight.cinnamon_wood>
+    model: expandeddelight:block/cinnamon_wood
+    behavior:
+      type: block_item
+      block: expandeddelight:cinnamon_wood
+  expandeddelight:stripped_cinnamon_wood:
+    data:
+      item-name: <!i><lang:block.expandeddelight.stripped_cinnamon_wood>
+    model: expandeddelight:block/stripped_cinnamon_wood
+    behavior:
+      type: block_item
+      block: expandeddelight:stripped_cinnamon_wood
+  expandeddelight:cinnamon_planks:
+    data:
+      item-name: <!i><lang:block.expandeddelight.cinnamon_planks>
+    model: expandeddelight:block/cinnamon_planks
+    behavior:
+      type: block_item
+      block: expandeddelight:cinnamon_planks
+  expandeddelight:cinnamon_cabinet:
+    data:
+      item-name: <!i><lang:block.expandeddelight.cinnamon_cabinet>
+    model: expandeddelight:block/cinnamon_cabinet
+    behavior:
+      type: block_item
+      block: expandeddelight:cinnamon_cabinet
+
+  expandeddelight:cinnamon_leaves:
+    data:
+      item-name: <!i><lang:block.expandeddelight.cinnamon_leaves>
+    model: expandeddelight:item/cinnamon_leaves
+    behavior:
+      type: block_item
+      block: expandeddelight:cinnamon_leaves
+
+  expandeddelight:cinnamon_sapling:
+    data:
+      item-name: <!i><lang:block.expandeddelight.cinnamon_sapling>
+    model: expandeddelight:item/cinnamon_sapling
+    behavior:
+      type: block_item
+      block: expandeddelight:cinnamon_sapling
+
+  expandeddelight:cinnamon_sapling_block:
+    data:
+      item-name: <!i><lang:block.expandeddelight.cinnamon_sapling>
+    model: expandeddelight:block/cinnamon_sapling
+
+
+
+  # 儲物箱
+  expandeddelight:asparagus_crate:
+    data:
+      item-name: <!i><lang:block.expandeddelight.asparagus_crate>
+    model: expandeddelight:block/asparagus_crate
+    behavior:
+      type: block_item
+      block: expandeddelight:asparagus_crate
+  expandeddelight:sweet_potato_crate:
+    data:
+      item-name: <!i><lang:block.expandeddelight.sweet_potato_crate>
+    model: expandeddelight:block/sweet_potato_crate
+    behavior:
+      type: block_item
+      block: expandeddelight:sweet_potato_crate
+  expandeddelight:chili_pepper_crate:
+    data:
+      item-name: <!i><lang:block.expandeddelight.chili_pepper_crate>
+    model: expandeddelight:block/chili_pepper_crate
+    behavior:
+      type: block_item
+      block: expandeddelight:chili_pepper_crate
+  expandeddelight:cranberry_bag:
+    data:
+      item-name: <!i><lang:block.expandeddelight.cranberry_bag>
+    model: expandeddelight:block/cranberry_bag
+    behavior:
+      type: block_item
+      block: expandeddelight:cranberry_bag
+
+  # 鹽礦
+  expandeddelight:salt_ore:
+    data:
+      item-name: <!i><lang:block.expandeddelight.salt_ore>
+    model: expandeddelight:block/salt_ore
+    behavior:
+      type: block_item
+      block: expandeddelight:salt_ore
+  expandeddelight:deepslate_salt_ore:
+    data:
+      item-name: <!i><lang:block.expandeddelight.deepslate_salt_ore>
+    model: expandeddelight:block/deepslate_salt_ore
+    behavior:
+      type: block_item
+      block: expandeddelight:deepslate_salt_ore
+
+  # 完整派餅物品
+  expandeddelight:cranberry_cobbler:
+    data:
+      item-name: <!i><lang:block.expandeddelight.cranberry_cobbler>
+      lore: '<!i><dark_gray><lang:farmersdelight.tooltip.placeable></dark_gray>'
+    model: expandeddelight:block/cranberry_cobbler
+    behavior:
+      type: ground_block_item
+      block: expandeddelight:cranberry_cobbler
+  expandeddelight:honeyed_goat_cheese_tart:
+    data:
+      item-name: <!i><lang:block.expandeddelight.honeyed_goat_cheese_tart>
+      lore: '<!i><dark_gray><lang:farmersdelight.tooltip.placeable></dark_gray>'
+    model: expandeddelight:block/honeyed_goat_cheese_tart
+    behavior:
+      type: ground_block_item
+      block: expandeddelight:honeyed_goat_cheese_tart
+
+  # 派餅切片方塊渲染物品
+  expandeddelight:cranberry_cobbler_slice0:
+    data:
+      item-name: <!i><lang:block.expandeddelight.cranberry_cobbler>
+    model: expandeddelight:block/cranberry_cobbler
+  expandeddelight:cranberry_cobbler_slice1:
+    data:
+      item-name: <!i><lang:block.expandeddelight.cranberry_cobbler>
+    model: expandeddelight:block/cranberry_cobbler_slice1
+  expandeddelight:cranberry_cobbler_slice2:
+    data:
+      item-name: <!i><lang:block.expandeddelight.cranberry_cobbler>
+    model: expandeddelight:block/cranberry_cobbler_slice2
+  expandeddelight:cranberry_cobbler_slice3:
+    data:
+      item-name: <!i><lang:block.expandeddelight.cranberry_cobbler>
+    model: expandeddelight:block/cranberry_cobbler_slice3
+
+  expandeddelight:honeyed_goat_cheese_tart_slice0:
+    data:
+      item-name: <!i><lang:block.expandeddelight.honeyed_goat_cheese_tart>
+    model: expandeddelight:block/honeyed_goat_cheese_tart
+  expandeddelight:honeyed_goat_cheese_tart_slice1:
+    data:
+      item-name: <!i><lang:block.expandeddelight.honeyed_goat_cheese_tart>
+    model: expandeddelight:block/honeyed_goat_cheese_tart_slice1
+  expandeddelight:honeyed_goat_cheese_tart_slice2:
+    data:
+      item-name: <!i><lang:block.expandeddelight.honeyed_goat_cheese_tart>
+    model: expandeddelight:block/honeyed_goat_cheese_tart_slice2
+  expandeddelight:honeyed_goat_cheese_tart_slice3:
+    data:
+      item-name: <!i><lang:block.expandeddelight.honeyed_goat_cheese_tart>
+    model: expandeddelight:block/honeyed_goat_cheese_tart_slice3

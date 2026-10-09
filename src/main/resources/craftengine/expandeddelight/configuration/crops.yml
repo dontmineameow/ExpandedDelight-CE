@@ -1,0 +1,893 @@
+blocks:
+  expandeddelight:asparagus_crop:
+    settings:
+      template:
+        - default:hardness/none
+        - default:sound/grass
+      overrides:
+        item: expandeddelight:asparagus_seeds
+        push-reaction: destroy
+        is-randomly-ticking: true
+      tags:
+        - minecraft:bee_growables
+        - minecraft:crops
+        - minecraft:maintains_farmland
+    behaviors:
+      - type: liquid_flowable_block
+      - type: crop_block
+        grow-speed: 0.25
+        light-requirement: 9
+        is-bone-meal-target: true
+        bone_meal_age_bonus:
+          type: uniform
+          min: 1
+          max: 3
+      - type: bush_block
+        bottom-blocks:
+          - minecraft:farmland
+          - farmersdelight:rich_soil_farmland
+    states:
+      properties:
+        age:
+          type: int
+          default: 0
+          range: 0~3
+      appearances:
+        age=0:
+          auto_state:
+            type: sugar_cane
+            id: transparent
+          transparent: true
+          entity-renderer:
+            item: expandeddelight:asparagus_crop_stage0
+        age=1:
+          auto_state:
+            type: sugar_cane
+            id: transparent
+          transparent: true
+          entity-renderer:
+            item: expandeddelight:asparagus_crop_stage1
+        age=2:
+          auto_state:
+            type: sugar_cane
+            id: transparent
+          transparent: true
+          entity-renderer:
+            item: expandeddelight:asparagus_crop_stage2
+        age=3:
+          auto_state:
+            type: sugar_cane
+            id: transparent
+          transparent: true
+          entity-renderer:
+            item: expandeddelight:asparagus_crop_stage3
+      variants:
+        age=0:
+          appearance: age=0
+        age=1:
+          appearance: age=1
+        age=2:
+          appearance: age=2
+        age=3:
+          appearance: age=3
+    loot:
+      functions:
+        - type: explosion_decay
+      pools:
+        - rolls: 1
+          entries:
+            - type: alternatives
+              children:
+                - type: item
+                  item: expandeddelight:asparagus
+                  count: 1
+                  conditions:
+                    - type: match_block_property
+                      properties:
+                        age: 3
+                - type: item
+                  item: expandeddelight:asparagus_seeds
+                  count: 1
+                  conditions:
+                    - type: inverted
+                      term:
+                        type: match_block_property
+                        properties:
+                          age: 3
+        - rolls: 1
+          conditions:
+            - type: match_block_property
+              properties:
+                age: 3
+          entries:
+            - type: item
+              item: expandeddelight:asparagus_seeds
+              count: 1
+              functions:
+                - type: apply_bonus
+                  enchantment: minecraft:fortune
+                  formula:
+                    type: binomial_with_bonus_count
+                    extra: 3
+                    probability: 0.5714286
+
+  expandeddelight:sweet_potato_crop:
+    settings:
+      template:
+        - default:hardness/none
+        - default:sound/grass
+      overrides:
+        item: expandeddelight:sweet_potato
+        push-reaction: destroy
+        is-randomly-ticking: true
+      tags:
+        - minecraft:bee_growables
+        - minecraft:crops
+        - minecraft:maintains_farmland
+    behaviors:
+      - type: liquid_flowable_block
+      - type: crop_block
+        grow-speed: 0.25
+        light-requirement: 9
+        is-bone-meal-target: true
+        bone_meal_age_bonus:
+          type: uniform
+          min: 1
+          max: 3
+      - type: bush_block
+        bottom-blocks:
+          - minecraft:farmland
+          - farmersdelight:rich_soil_farmland
+    states:
+      properties:
+        age:
+          type: int
+          default: 0
+          range: 0~3
+      appearances:
+        age=0:
+          auto_state:
+            type: sugar_cane
+            id: transparent
+          transparent: true
+          entity-renderer:
+            item: expandeddelight:sweet_potato_crop_stage0
+        age=1:
+          auto_state:
+            type: sugar_cane
+            id: transparent
+          transparent: true
+          entity-renderer:
+            item: expandeddelight:sweet_potato_crop_stage1
+        age=2:
+          auto_state:
+            type: sugar_cane
+            id: transparent
+          transparent: true
+          entity-renderer:
+            item: expandeddelight:sweet_potato_crop_stage2
+        age=3:
+          auto_state:
+            type: sugar_cane
+            id: transparent
+          transparent: true
+          entity-renderer:
+            item: expandeddelight:sweet_potato_crop_stage3
+      variants:
+        age=0:
+          appearance: age=0
+        age=1:
+          appearance: age=1
+        age=2:
+          appearance: age=2
+        age=3:
+          appearance: age=3
+    loot:
+      functions:
+        - type: explosion_decay
+      pools:
+        - rolls: 1
+          entries:
+            - type: item
+              item: expandeddelight:sweet_potato
+              count: 1
+        - rolls: 1
+          conditions:
+            - type: match_block_property
+              properties:
+                age: 3
+          entries:
+            - type: item
+              item: expandeddelight:sweet_potato
+              count: 1
+              functions:
+                - type: apply_bonus
+                  enchantment: minecraft:fortune
+                  formula:
+                    type: binomial_with_bonus_count
+                    extra: 3
+                    probability: 0.5714286
+
+  expandeddelight:chili_pepper_crop:
+    settings:
+      template:
+        - default:hardness/none
+        - default:sound/grass
+      overrides:
+        item: expandeddelight:chili_pepper_seeds
+        push-reaction: destroy
+        is-randomly-ticking: true
+      tags:
+        - minecraft:bee_growables
+        - minecraft:crops
+        - minecraft:maintains_farmland
+    behaviors:
+      - type: liquid_flowable_block
+      - type: crop_block
+        grow-speed: 0.25
+        light-requirement: 9
+        is-bone-meal-target: true
+        bone_meal_age_bonus:
+          type: uniform
+          min: 1
+          max: 3
+      - type: bush_block
+        bottom-blocks:
+          - minecraft:farmland
+          - farmersdelight:rich_soil_farmland
+    states:
+      properties:
+        age:
+          type: int
+          default: 0
+          range: 0~3
+      appearances:
+        age=0:
+          auto_state:
+            type: sugar_cane
+            id: transparent
+          transparent: true
+          entity-renderer:
+            item: expandeddelight:chili_pepper_crop_stage0
+        age=1:
+          auto_state:
+            type: sugar_cane
+            id: transparent
+          transparent: true
+          entity-renderer:
+            item: expandeddelight:chili_pepper_crop_stage1
+        age=2:
+          auto_state:
+            type: sugar_cane
+            id: transparent
+          transparent: true
+          entity-renderer:
+            item: expandeddelight:chili_pepper_crop_stage2
+        age=3:
+          auto_state:
+            type: sugar_cane
+            id: transparent
+          transparent: true
+          entity-renderer:
+            item: expandeddelight:chili_pepper_crop_stage3
+      variants:
+        age=0:
+          appearance: age=0
+        age=1:
+          appearance: age=1
+        age=2:
+          appearance: age=2
+        age=3:
+          appearance: age=3
+    loot:
+      functions:
+        - type: explosion_decay
+      pools:
+        - rolls: 1
+          entries:
+            - type: alternatives
+              children:
+                - type: item
+                  item: expandeddelight:chili_pepper
+                  count: 1
+                  conditions:
+                    - type: match_block_property
+                      properties:
+                        age: 3
+                - type: item
+                  item: expandeddelight:chili_pepper_seeds
+                  count: 1
+                  conditions:
+                    - type: inverted
+                      term:
+                        type: match_block_property
+                        properties:
+                          age: 3
+        - rolls: 1
+          conditions:
+            - type: match_block_property
+              properties:
+                age: 3
+          entries:
+            - type: item
+              item: expandeddelight:chili_pepper_seeds
+              count: 1
+              functions:
+                - type: apply_bonus
+                  enchantment: minecraft:fortune
+                  formula:
+                    type: binomial_with_bonus_count
+                    extra: 3
+                    probability: 0.5714286
+
+  expandeddelight:peanut_crop:
+    settings:
+      template:
+        - default:hardness/none
+        - default:sound/grass
+      overrides:
+        item: expandeddelight:peanut
+        push-reaction: destroy
+        is-randomly-ticking: true
+      tags:
+        - minecraft:bee_growables
+        - minecraft:crops
+        - minecraft:maintains_farmland
+    behaviors:
+      - type: liquid_flowable_block
+      - type: crop_block
+        grow-speed: 0.25
+        light-requirement: 9
+        is-bone-meal-target: true
+        bone_meal_age_bonus:
+          type: uniform
+          min: 1
+          max: 3
+      - type: bush_block
+        bottom-blocks:
+          - minecraft:farmland
+          - farmersdelight:rich_soil_farmland
+    states:
+      properties:
+        age:
+          type: int
+          default: 0
+          range: 0~3
+      appearances:
+        age=0:
+          auto_state:
+            type: sugar_cane
+            id: transparent
+          transparent: true
+          entity-renderer:
+            item: expandeddelight:peanut_crop_stage0
+        age=1:
+          auto_state:
+            type: sugar_cane
+            id: transparent
+          transparent: true
+          entity-renderer:
+            item: expandeddelight:peanut_crop_stage1
+        age=2:
+          auto_state:
+            type: sugar_cane
+            id: transparent
+          transparent: true
+          entity-renderer:
+            item: expandeddelight:peanut_crop_stage2
+        age=3:
+          auto_state:
+            type: sugar_cane
+            id: transparent
+          transparent: true
+          entity-renderer:
+            item: expandeddelight:peanut_crop_stage3
+      variants:
+        age=0:
+          appearance: age=0
+        age=1:
+          appearance: age=1
+        age=2:
+          appearance: age=2
+        age=3:
+          appearance: age=3
+    loot:
+      functions:
+        - type: explosion_decay
+      pools:
+        - rolls: 1
+          entries:
+            - type: item
+              item: expandeddelight:peanut
+              count: 1
+        - rolls: 1
+          conditions:
+            - type: match_block_property
+              properties:
+                age: 3
+          entries:
+            - type: item
+              item: expandeddelight:peanut
+              count: 1
+              functions:
+                - type: apply_bonus
+                  enchantment: minecraft:fortune
+                  formula:
+                    type: binomial_with_bonus_count
+                    extra: 3
+                    probability: 0.5714286
+
+  expandeddelight:cranberry_plant:
+    settings:
+      template:
+        - default:hardness/none
+        - default:sound/grass
+      overrides:
+        item: expandeddelight:cranberries
+        push-reaction: destroy
+        is-randomly-ticking: true
+      tags:
+        - minecraft:bee_growables
+        - minecraft:crops
+        - minecraft:maintains_farmland
+    behaviors:
+      - type: liquid_flowable_block
+      - type: crop_block
+        grow-speed: 0.25
+        light-requirement: 9
+        is-bone-meal-target: true
+        bone_meal_age_bonus:
+          type: uniform
+          min: 1
+          max: 3
+      - type: bush_block
+        bottom-blocks:
+          - minecraft:farmland
+          - farmersdelight:rich_soil_farmland
+    states:
+      properties:
+        age:
+          type: int
+          default: 0
+          range: 0~3
+      appearances:
+        age=0:
+          auto_state:
+            type: sugar_cane
+            id: transparent
+          transparent: true
+          entity-renderer:
+            item: expandeddelight:cranberry_plant_stage0
+        age=1:
+          auto_state:
+            type: sugar_cane
+            id: transparent
+          transparent: true
+          entity-renderer:
+            item: expandeddelight:cranberry_plant_stage1
+        age=2:
+          auto_state:
+            type: sugar_cane
+            id: transparent
+          transparent: true
+          entity-renderer:
+            item: expandeddelight:cranberry_plant_stage2
+        age=3:
+          auto_state:
+            type: sugar_cane
+            id: transparent
+          transparent: true
+          entity-renderer:
+            item: expandeddelight:cranberry_plant_stage3
+      variants:
+        age=0:
+          appearance: age=0
+        age=1:
+          appearance: age=1
+        age=2:
+          appearance: age=2
+        age=3:
+          appearance: age=3
+    loot:
+      functions:
+        - type: explosion_decay
+      pools:
+        - rolls: 1
+          entries:
+            - type: item
+              item: expandeddelight:cranberries
+              count: 1
+        - rolls: 1
+          conditions:
+            - type: match_block_property
+              properties:
+                age: 3
+          entries:
+            - type: item
+              item: expandeddelight:cranberries
+              count: 1
+              functions:
+                - type: apply_bonus
+                  enchantment: minecraft:fortune
+                  formula:
+                    type: binomial_with_bonus_count
+                    extra: 3
+                    probability: 0.5714286
+
+  expandeddelight:wild_asparagus:
+    settings:
+      template:
+        - default:hardness/none
+        - default:sound/grass
+      overrides:
+        item: expandeddelight:wild_asparagus
+        push-reaction: destroy
+      tags:
+        - minecraft:flowers
+        - minecraft:small_flowers
+        - farmersdelight:wild_crops
+        - farmersdelight:unaffected_by_rich_soil
+    behaviors:
+      - type: liquid_flowable_block
+      - type: bush_block
+        bottom-block-tags:
+          - minecraft:dirt
+          - minecraft:sand
+        bottom-blocks:
+          - minecraft:grass_block
+      - type: farmersdelight:wild_plant
+        bone-meal:
+          is-target: true
+    state:
+      auto_state:
+        type: sugar_cane
+        id: transparent
+      transparent: true
+      entity-renderer:
+        item: expandeddelight:wild_asparagus_display
+    loot:
+      pools:
+        - rolls: 1
+          entries:
+            - type: alternatives
+              children:
+                - type: item
+                  item: expandeddelight:wild_asparagus
+                  conditions:
+                    - type: match_item
+                      item: minecraft:shears
+                - type: item
+                  item: expandeddelight:asparagus_seeds
+                  count: 1
+                  functions:
+                    - type: explosion_decay
+                    - type: apply_bonus
+                      enchantment: minecraft:fortune
+                      formula:
+                        type: binomial_with_bonus_count
+                        extra: 0
+                        probability: 1.0
+        - rolls: 1
+          conditions:
+            - type: random
+              value: 0.3
+            - type: inverted
+              term:
+                type: match_item
+                item: minecraft:shears
+          entries:
+            - type: item
+              item: expandeddelight:asparagus
+              count: 1
+
+  expandeddelight:wild_sweet_potato:
+    settings:
+      template:
+        - default:hardness/none
+        - default:sound/grass
+      overrides:
+        item: expandeddelight:wild_sweet_potato
+        push-reaction: destroy
+      tags:
+        - minecraft:flowers
+        - minecraft:small_flowers
+        - farmersdelight:wild_crops
+        - farmersdelight:unaffected_by_rich_soil
+    behaviors:
+      - type: liquid_flowable_block
+      - type: bush_block
+        bottom-block-tags:
+          - minecraft:dirt
+          - minecraft:sand
+        bottom-blocks:
+          - minecraft:grass_block
+      - type: farmersdelight:wild_plant
+        bone-meal:
+          is-target: true
+    state:
+      auto_state:
+        type: sugar_cane
+        id: transparent
+      transparent: true
+      entity-renderer:
+        item: expandeddelight:wild_sweet_potato_display
+    loot:
+      pools:
+        - rolls: 1
+          entries:
+            - type: alternatives
+              children:
+                - type: item
+                  item: expandeddelight:wild_sweet_potato
+                  conditions:
+                    - type: match_item
+                      item: minecraft:shears
+                - type: item
+                  item: expandeddelight:sweet_potato
+                  count: 1
+                  functions:
+                    - type: explosion_decay
+                    - type: apply_bonus
+                      enchantment: minecraft:fortune
+                      formula:
+                        type: binomial_with_bonus_count
+                        extra: 0
+                        probability: 1.0
+        - rolls: 1
+          conditions:
+            - type: random
+              value: 0.3
+            - type: inverted
+              term:
+                type: match_item
+                item: minecraft:shears
+          entries:
+            - type: item
+              item: expandeddelight:sweet_potato
+              count: 1
+
+  expandeddelight:wild_chili_pepper:
+    settings:
+      template:
+        - default:hardness/none
+        - default:sound/grass
+      overrides:
+        item: expandeddelight:wild_chili_pepper
+        push-reaction: destroy
+      tags:
+        - minecraft:flowers
+        - minecraft:small_flowers
+        - farmersdelight:wild_crops
+        - farmersdelight:unaffected_by_rich_soil
+    behaviors:
+      - type: liquid_flowable_block
+      - type: bush_block
+        bottom-block-tags:
+          - minecraft:dirt
+          - minecraft:sand
+        bottom-blocks:
+          - minecraft:grass_block
+      - type: farmersdelight:wild_plant
+        bone-meal:
+          is-target: true
+    state:
+      auto_state:
+        type: sugar_cane
+        id: transparent
+      transparent: true
+      entity-renderer:
+        item: expandeddelight:wild_chili_pepper_display
+    loot:
+      pools:
+        - rolls: 1
+          entries:
+            - type: alternatives
+              children:
+                - type: item
+                  item: expandeddelight:wild_chili_pepper
+                  conditions:
+                    - type: match_item
+                      item: minecraft:shears
+                - type: item
+                  item: expandeddelight:chili_pepper_seeds
+                  count: 1
+                  functions:
+                    - type: explosion_decay
+                    - type: apply_bonus
+                      enchantment: minecraft:fortune
+                      formula:
+                        type: binomial_with_bonus_count
+                        extra: 0
+                        probability: 1.0
+        - rolls: 1
+          conditions:
+            - type: random
+              value: 0.3
+            - type: inverted
+              term:
+                type: match_item
+                item: minecraft:shears
+          entries:
+            - type: item
+              item: expandeddelight:chili_pepper
+              count: 1
+
+  expandeddelight:wild_peanuts:
+    settings:
+      template:
+        - default:hardness/none
+        - default:sound/grass
+      overrides:
+        item: expandeddelight:wild_peanuts
+        push-reaction: destroy
+      tags:
+        - minecraft:flowers
+        - minecraft:small_flowers
+        - farmersdelight:wild_crops
+        - farmersdelight:unaffected_by_rich_soil
+    behaviors:
+      - type: liquid_flowable_block
+      - type: bush_block
+        bottom-block-tags:
+          - minecraft:dirt
+          - minecraft:sand
+        bottom-blocks:
+          - minecraft:grass_block
+      - type: farmersdelight:wild_plant
+        bone-meal:
+          is-target: true
+    state:
+      auto_state:
+        type: sugar_cane
+        id: transparent
+      transparent: true
+      entity-renderer:
+        item: expandeddelight:wild_peanuts_display
+    loot:
+      pools:
+        - rolls: 1
+          entries:
+            - type: alternatives
+              children:
+                - type: item
+                  item: expandeddelight:wild_peanuts
+                  conditions:
+                    - type: match_item
+                      item: minecraft:shears
+                - type: item
+                  item: expandeddelight:peanut
+                  count: 1
+                  functions:
+                    - type: explosion_decay
+                    - type: apply_bonus
+                      enchantment: minecraft:fortune
+                      formula:
+                        type: binomial_with_bonus_count
+                        extra: 0
+                        probability: 1.0
+        - rolls: 1
+          conditions:
+            - type: random
+              value: 0.3
+            - type: inverted
+              term:
+                type: match_item
+                item: minecraft:shears
+          entries:
+            - type: item
+              item: expandeddelight:peanut
+              count: 1
+
+items:
+  expandeddelight:asparagus_crop_stage0:
+    model: expandeddelight:block/asparagus_crop_stage0
+  expandeddelight:asparagus_crop_stage1:
+    model: expandeddelight:block/asparagus_crop_stage2
+  expandeddelight:asparagus_crop_stage2:
+    model: expandeddelight:block/asparagus_crop_stage5
+  expandeddelight:asparagus_crop_stage3:
+    model: expandeddelight:block/asparagus_crop_stage7
+
+  expandeddelight:sweet_potato_crop_stage0:
+    model: expandeddelight:block/sweet_potato_crop_stage0
+  expandeddelight:sweet_potato_crop_stage1:
+    model: expandeddelight:block/sweet_potato_crop_stage2
+  expandeddelight:sweet_potato_crop_stage2:
+    model: expandeddelight:block/sweet_potato_crop_stage5
+  expandeddelight:sweet_potato_crop_stage3:
+    model: expandeddelight:block/sweet_potato_crop_stage7
+
+  expandeddelight:chili_pepper_crop_stage0:
+    model: expandeddelight:block/chili_pepper_crop_stage0
+  expandeddelight:chili_pepper_crop_stage1:
+    model: expandeddelight:block/chili_pepper_crop_stage2
+  expandeddelight:chili_pepper_crop_stage2:
+    model: expandeddelight:block/chili_pepper_crop_stage5
+  expandeddelight:chili_pepper_crop_stage3:
+    model: expandeddelight:block/chili_pepper_crop_stage7
+
+  expandeddelight:peanut_crop_stage0:
+    model: expandeddelight:block/peanut_crop_stage0
+  expandeddelight:peanut_crop_stage1:
+    model: expandeddelight:block/peanut_crop_stage2
+  expandeddelight:peanut_crop_stage2:
+    model: expandeddelight:block/peanut_crop_stage5
+  expandeddelight:peanut_crop_stage3:
+    model: expandeddelight:block/peanut_crop_stage7
+
+  expandeddelight:cranberry_plant_stage0:
+    model: expandeddelight:block/cranberry_plant_stage0
+  expandeddelight:cranberry_plant_stage1:
+    model: expandeddelight:block/cranberry_plant_stage1
+  expandeddelight:cranberry_plant_stage2:
+    model: expandeddelight:block/cranberry_plant_stage2
+  expandeddelight:cranberry_plant_stage3:
+    model: expandeddelight:block/cranberry_plant_stage3
+
+  expandeddelight:wild_asparagus:
+    data:
+      item-name: <lang:block.expandeddelight.wild_asparagus>
+    texture: expandeddelight:block/wild_asparagus
+    behaviors:
+      - type: compostable_item
+        chance: 0.65
+      - type: block_item
+        block: expandeddelight:wild_asparagus
+    settings:
+      compost_probability: 0.65
+
+  expandeddelight:wild_asparagus_display:
+    data:
+      item-name: <lang:block.expandeddelight.wild_asparagus>
+    model: expandeddelight:block/wild_asparagus
+
+  expandeddelight:wild_sweet_potato:
+    data:
+      item-name: <lang:block.expandeddelight.wild_sweet_potato>
+    texture: expandeddelight:block/wild_sweet_potato
+    behaviors:
+      - type: compostable_item
+        chance: 0.65
+      - type: block_item
+        block: expandeddelight:wild_sweet_potato
+    settings:
+      compost_probability: 0.65
+
+  expandeddelight:wild_sweet_potato_display:
+    data:
+      item-name: <lang:block.expandeddelight.wild_sweet_potato>
+    model: expandeddelight:block/wild_sweet_potato
+
+  expandeddelight:wild_chili_pepper:
+    data:
+      item-name: <lang:block.expandeddelight.wild_chili_pepper>
+    texture: expandeddelight:block/wild_chili_pepper
+    behaviors:
+      - type: compostable_item
+        chance: 0.65
+      - type: block_item
+        block: expandeddelight:wild_chili_pepper
+    settings:
+      compost_probability: 0.65
+
+  expandeddelight:wild_chili_pepper_display:
+    data:
+      item-name: <lang:block.expandeddelight.wild_chili_pepper>
+    model: expandeddelight:block/wild_chili_pepper
+
+  expandeddelight:wild_peanuts:
+    data:
+      item-name: <lang:block.expandeddelight.wild_peanuts>
+    texture: expandeddelight:block/wild_peanuts
+    behaviors:
+      - type: compostable_item
+        chance: 0.65
+      - type: block_item
+        block: expandeddelight:wild_peanuts
+    settings:
+      compost_probability: 0.65
+
+  expandeddelight:wild_peanuts_display:
+    data:
+      item-name: <lang:block.expandeddelight.wild_peanuts>
+    model: expandeddelight:block/wild_peanuts
